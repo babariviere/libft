@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:54:03 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/10 14:46:04 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/17 15:16:03 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,22 @@
 static int		ft_itoa_rec(char *res, int n)
 {
 	int		idx;
-	int		neg;
 
 	idx = 0;
-	neg = 0;
 	if (n < 0)
 	{
 		res[idx] = '-';
 		res++;
-		if (n % 10 != 0)
+		if (n == FT_INT_MIN)
 		{
-			neg = 1;
-			n = -(n + 1);
+			ft_strcpy(res, "-2147483648");
+			return (0);
 		}
-		else
-			n = -n;
+		n = -n;
 	}
 	if (n >= 10)
 		idx = ft_itoa_rec(res, n / 10);
-	res[idx++] = (n % 10) + '0' + neg;
+	res[idx++] = (n % 10) + '0';
 	return (idx);
 }
 

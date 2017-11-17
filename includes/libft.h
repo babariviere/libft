@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:32:54 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/16 12:27:51 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/17 16:42:09 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ size_t			ft_lstlen(const t_list *lst);
 t_list			*ft_lstfind(const t_list *lst,
 		int (*f)(const void *content, const void *to_find),
 		void *to_find);
+t_list			*ft_lstat(const t_list *lst, size_t idx);
 
 /*
 ** ARGS

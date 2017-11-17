@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:32:54 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/17 16:42:09 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/17 17:31:29 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,12 @@ int				ft_isupper(int c);
 int				ft_iswhitespace(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+
+/*
+** MATH
+*/
+int				ft_sqrt(int nb);
+int				ft_pow(int nb, int pow);
 
 /*
 ** OUTPUT

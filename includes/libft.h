@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:32:54 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/17 17:31:29 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/20 16:49:49 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # define FT_INT_MAX 2147483647
 # define FT_INT_MIN -2147483648
 
+# include "ft_gnl.h"
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
 typedef unsigned char	t_uchar;

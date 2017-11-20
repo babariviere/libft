@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_gnl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 17:31:34 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/20 16:50:07 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/16 12:14:51 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/20 16:48:45 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_GNL_H
+# define FT_GNL_H
 
-int		ft_sqrt(int nb)
-{
-	int	sqrt;
-	int	tmp;
+# define BUFF_SIZE 1024
 
-	if (nb < 0)
-		return (-1);
-	if (nb == 0)
-		return (0);
-	sqrt = 1;
-	while (sqrt * sqrt < nb)
-	{
-		tmp = sqrt * 2;
-		if (tmp > nb)
-			return (sqrt);
-		sqrt *= tmp;
-	}
-	return (sqrt);
-}
+# include "libft.h"
+# include <string.h>
+
+typedef struct	s_buf_tracker {
+	int		fd;
+	char	*buf;
+	size_t	buf_len;
+	size_t	idx;
+	int		is_eof;
+}				t_buf_tracker;
+
+int				get_next_line(const int fd, char **line);
+
+#endif

@@ -23,7 +23,7 @@ obj_dbg/%.o: src/%.c
 	$(CC) $(CFLAGS) -g -c $< -o $@
 
 norme:
-	@norminette $(SRC) src/*.h
+	@norminette $(SRC)
 
 debug: $(NAME_DBG)
 

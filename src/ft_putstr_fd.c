@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:12:46 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/10 13:53:40 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:09:48 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	ft_putstr_fd(const char *str, int fd)
 {
-	if (str == 0)
-		return ;
-	while (*str != 0)
-		ft_putchar_fd(*(str++), fd);
+	write(fd, str, ft_strlen(str));
 }

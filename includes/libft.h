@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/20 16:52:44 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/21 10:26:20 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void			ft_putchar(char c);
 void			ft_putstr(const char *str);
 void			ft_putendl(const char *str);
 void			ft_putnbr(int n);
+int				ft_puterr(int err, char *str);
 
 /*
 ** OUTPUT FILE

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 20:07:50 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:00:00 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int				ft_pow(int nb, int pow);
 ** OUTPUT
 */
 void			ft_putchar(char c);
+void			ft_putchar_mul(char c, size_t count);
 void			ft_putstr(const char *str);
 void			ft_putendl(const char *str);
 void			ft_putnbr(int n);

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:14:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/20 16:48:24 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/23 13:01:07 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,25 @@ static t_buf_tracker	*add_buf_tracker(t_list **alst, const int fd)
 	bt->idx = 0;
 	if ((node = ft_lstnew(bt, sizeof(t_buf_tracker))) == 0)
 		return (0);
+	free(bt);
 	ft_lstadd(alst, node);
 	return (node->content);
 }
 
-static t_buf_tracker	*find_fd_tracker(t_list *lst, const int fd)
+static t_buf_tracker	*find_fd_tracker_or_add(t_list **lst, const int fd)
 {
 	t_buf_tracker	*tmp;
+	t_list			*lst_tmp;
 
-	while (lst)
+	lst_tmp = *lst;
+	while (lst_tmp)
 	{
-		tmp = lst->content;
+		tmp = lst_tmp->content;
 		if (tmp->fd == fd)
 			return (tmp);
-		lst = lst->next;
+		lst_tmp = lst_tmp->next;
 	}
-	return (0);
+	return (add_buf_tracker(lst, fd));
 }
 
 static int				read_fd_to_buf(const int fd, t_buf_tracker *bt)
@@ -61,7 +64,7 @@ static int				read_fd_to_buf(const int fd, t_buf_tracker *bt)
 	if (readed < BUFF_SIZE)
 		bt->is_eof = 1;
 	old_buf = bt->buf;
-	bt->buf_len += BUFF_SIZE;
+	bt->buf_len += readed;
 	if ((bt->buf = ft_strnew(bt->buf_len)) == 0)
 		return (0);
 	if (old_buf)
@@ -97,7 +100,8 @@ int						free_buf_tracker_fd(const int fd, t_list **holder)
 	if (*holder == lst)
 		*holder = lst->next;
 	if (tmp->buf)
-		ft_memdel((void **)&tmp->buf);
+		ft_strdel(&tmp->buf);
+	ft_memdel((void **)&lst->content);
 	ft_memdel((void **)&lst);
 	return (0);
 }
@@ -109,11 +113,10 @@ int						ft_gnl(const int fd, char **line)
 	char			*tmp;
 	size_t			len;
 
-	if (fd < 0)
+	if (fd < 0 || line == 0)
 		return (-1);
-	if ((bt = find_fd_tracker(holder, fd)) == 0)
-		if ((bt = add_buf_tracker(&holder, fd)) == 0)
-			return (-1);
+	if ((bt = find_fd_tracker_or_add(&holder, fd)) == 0)
+		return (-1);
 	while ((tmp = ft_strchr(bt->buf + bt->idx, '\n')) == 0 && !bt->is_eof)
 		if (read_fd_to_buf(fd, bt) == 0)
 			return (-1);
@@ -127,5 +130,7 @@ int						ft_gnl(const int fd, char **line)
 		return (-1);
 	*line = ft_strsub(bt->buf, bt->idx, len);
 	bt->idx += len + 1;
+	if (bt->idx + 1 >= bt->buf_len && bt->is_eof == 1)
+		free_buf_tracker_fd(fd, &holder);
 	return (1);
 }

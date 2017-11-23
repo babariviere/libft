@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_mul.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 16:46:29 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 20:09:34 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/22 13:00:09 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/22 13:01:08 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *str)
+void	ft_putchar_mul(char c, size_t count)
 {
-	write(1, str, ft_strlen(str));
+	char	tab[count];
+	size_t	idx;
+
+	idx = 0;
+	while (idx < count)
+		tab[idx++] = c;
+	write(1, tab, count);
 }

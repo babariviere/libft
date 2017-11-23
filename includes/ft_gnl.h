@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:14:51 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/20 16:48:45 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/23 10:24:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ typedef struct	s_buf_tracker {
 	int		is_eof;
 }				t_buf_tracker;
 
-int				get_next_line(const int fd, char **line);
+int				ft_gnl(const int fd, char **line);
 
 #endif

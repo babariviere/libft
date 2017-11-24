@@ -6,35 +6,15 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:14:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/23 13:01:07 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 21:01:22 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_gnl.h"
 
-static t_buf_tracker	*add_buf_tracker(t_list **alst, const int fd)
+static t_fd_tracker		*find_fd_tracker_or_add(t_list **lst, const int fd)
 {
-	t_list			*node;
-	t_buf_tracker	*bt;
-
-	if ((bt = ft_memalloc(sizeof(t_buf_tracker))) == 0)
-		return (0);
-	bt->fd = fd;
-	bt->is_eof = 0;
-	if ((bt->buf = ft_strnew(0)) == 0)
-		return (0);
-	bt->buf_len = 1;
-	bt->idx = 0;
-	if ((node = ft_lstnew(bt, sizeof(t_buf_tracker))) == 0)
-		return (0);
-	free(bt);
-	ft_lstadd(alst, node);
-	return (node->content);
-}
-
-static t_buf_tracker	*find_fd_tracker_or_add(t_list **lst, const int fd)
-{
-	t_buf_tracker	*tmp;
+	t_fd_tracker	*tmp;
 	t_list			*lst_tmp;
 
 	lst_tmp = *lst;
@@ -45,92 +25,76 @@ static t_buf_tracker	*find_fd_tracker_or_add(t_list **lst, const int fd)
 			return (tmp);
 		lst_tmp = lst_tmp->next;
 	}
-	return (add_buf_tracker(lst, fd));
+	if ((tmp = ft_memalloc(sizeof(t_fd_tracker))) == 0)
+		return (0);
+	tmp->fd = fd;
+	if ((tmp->buf = ft_strnew(0)) == 0)
+		return (0);
+	if ((lst_tmp = ft_lstnew(tmp, sizeof(t_fd_tracker))) == 0)
+		return (0);
+	free(tmp);
+	ft_lstadd(lst, lst_tmp);
+	return (lst_tmp->content);
 }
 
-static int				read_fd_to_buf(const int fd, t_buf_tracker *bt)
+static int				read_and_stock(char **buf, const int fd)
 {
-	char	*tmp;
-	char	*old_buf;
-	size_t	readed;
+	char			tmp_buf[BUFF_SIZE + 1];
+	char			*tmp;
+	int				readed;
 
-	if (fd < 0)
-		return (0);
-	if ((tmp = ft_strnew(BUFF_SIZE)) == 0)
-		return (0);
-	readed = read(fd, tmp, BUFF_SIZE);
-	if ((int)readed == -1)
-		return (0);
-	if (readed < BUFF_SIZE)
-		bt->is_eof = 1;
-	old_buf = bt->buf;
-	bt->buf_len += readed;
-	if ((bt->buf = ft_strnew(bt->buf_len)) == 0)
-		return (0);
-	if (old_buf)
-	{
-		ft_strcat(bt->buf, old_buf);
-		ft_strdel(&old_buf);
-	}
-	ft_strcat(bt->buf, tmp);
-	ft_strdel(&tmp);
-	return (1);
+	if ((readed = read(fd, tmp_buf, BUFF_SIZE)) < 0)
+		return (-1);
+	tmp_buf[readed] = 0;
+	tmp = *buf;
+	*buf = ft_strjoin(*buf, tmp_buf);
+	free(tmp);
+	return (readed);
 }
 
-int						free_buf_tracker_fd(const int fd, t_list **holder)
+static void				copy_and_crop(char **dest, char **src)
 {
-	t_buf_tracker	*tmp;
-	t_list			*lst;
-	t_list			*lst_prev;
+	size_t		idx;
+	char		*tmp;
 
-	lst = *holder;
-	lst_prev = lst;
-	while (lst)
+	idx = 0;
+	while ((*src)[idx] != '\n' && (*src)[idx] != 0)
+		idx++;
+	*dest = ft_strsub(*src, 0, idx);
+	if ((*src)[idx] == '\n')
 	{
-		tmp = lst->content;
-		if (tmp->fd == fd)
-			break ;
-		lst_prev = lst;
-		lst = lst->next;
+		tmp = *src;
+		*src = ft_strsub(*src, idx + 1, ft_strlen(*src) - idx - 1);
+		ft_strdel(&tmp);
 	}
-	if (lst == 0)
-		return (0);
-	if (lst_prev != lst)
-		lst_prev->next = lst->next;
-	if (*holder == lst)
-		*holder = lst->next;
-	if (tmp->buf)
-		ft_strdel(&tmp->buf);
-	ft_memdel((void **)&lst->content);
-	ft_memdel((void **)&lst);
-	return (0);
+	else
+		ft_strdel(src);
 }
 
 int						ft_gnl(const int fd, char **line)
 {
 	static t_list	*holder;
-	t_buf_tracker	*bt;
-	char			*tmp;
-	size_t			len;
+	t_fd_tracker	*fdt;
+	int				readed;
 
 	if (fd < 0 || line == 0)
 		return (-1);
-	if ((bt = find_fd_tracker_or_add(&holder, fd)) == 0)
+	*line = 0;
+	if ((fdt = find_fd_tracker_or_add(&holder, fd)) == 0)
 		return (-1);
-	while ((tmp = ft_strchr(bt->buf + bt->idx, '\n')) == 0 && !bt->is_eof)
-		if (read_fd_to_buf(fd, bt) == 0)
+	readed = 1;
+	while (ft_strchr(fdt->buf, '\n') == 0 && readed > 0)
+		if ((readed = read_and_stock(&fdt->buf, fd)) == -1)
 			return (-1);
-	len = tmp - (bt->buf + bt->idx);
-	if (tmp == 0 && bt->is_eof)
+	if (fdt->buf[0] != 0)
 	{
-		if ((len = ft_strlen(bt->buf + bt->idx)) == 0)
-			return (free_buf_tracker_fd(fd, &holder));
+		copy_and_crop(line, &fdt->buf);
+		if (fdt->buf == 0)
+			if ((fdt->buf = ft_strnew(0)) == 0)
+				return (-1);
+		if (*line == 0)
+			return (-1);
+		return (1);
 	}
-	else if (tmp == 0 && !bt->is_eof)
-		return (-1);
-	*line = ft_strsub(bt->buf, bt->idx, len);
-	bt->idx += len + 1;
-	if (bt->idx + 1 >= bt->buf_len && bt->is_eof == 1)
-		free_buf_tracker_fd(fd, &holder);
-	return (1);
+	return (0);
 }

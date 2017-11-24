@@ -4,7 +4,7 @@ SRC=$(wildcard src/*.c)
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
 CC=clang
-CFLAGS=-Wall -Wextra -Werror -Iincludes
+CFLAGS=-Wall -Wextra -Werror -Iinclude
 
 all: $(NAME)
 

@@ -6,14 +6,14 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 12:52:06 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 12:58:43 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 13:01:15 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_sort_formatteds(t_formatted **formatteds, size_t tab_idx,
-		int (*cmp)(char *, char *))
+		int (*cmp)(const char *, const char *))
 {
 	size_t	idx;
 	size_t	sub_idx;

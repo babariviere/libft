@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 12:57:40 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 13:01:02 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,7 @@ void			ft_calibrate_formatted(t_formatted **formatteds,
 void			ft_calibrate_formatted_range(t_formatted **formatteds,
 		size_t start, size_t end, size_t diff_idx);
 void			ft_sort_formatteds(t_formatted **formatteds, size_t tab_idx,
-		int (*cmp)(char *, char *));
+		int (*cmp)(const char *, const char *));
 void			ft_free_formatted(t_formatted **formatted);
 
 #endif

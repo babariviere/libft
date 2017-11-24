@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:02:55 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 10:46:13 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ void			ft_memdel(void **ap);
 /*
 ** NUMBER
 */
+char			ft_human_metric_dec(size_t nb);
 int				ft_atoi(const char *str);
-char			*ft_itoa(int n);
+char			*ft_itoa(int nb);
+char			*ft_stoa_human_dec(size_t nb);
 size_t			ft_numlen(int nb);
 
 /*

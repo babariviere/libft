@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:46:13 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 10:59:42 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 							size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_strcmp_rev(const char *s1, const char *s2);
 int				ft_strequ(const char *s1, const char *s2);
 int				ft_strnequ(const char *s1, const char *s2, size_t n);
 char			*ft_strnew(size_t size);

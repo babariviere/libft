@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:59:42 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 12:57:40 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
+void			ft_swap(int *a, int *b);
+void			ft_swap_ptr(void **ptr1, void **ptr2);
 
 /*
 ** NUMBER
@@ -180,6 +182,8 @@ void			ft_calibrate_formatted(t_formatted **formatteds,
 		size_t tab_idx, size_t diff_idx);
 void			ft_calibrate_formatted_range(t_formatted **formatteds,
 		size_t start, size_t end, size_t diff_idx);
+void			ft_sort_formatteds(t_formatted **formatteds, size_t tab_idx,
+		int (*cmp)(char *, char *));
 void			ft_free_formatted(t_formatted **formatted);
 
 #endif

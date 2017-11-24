@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:49:17 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 13:20:29 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ char	*ft_stoa_human_dec(size_t nb)
 	metric[1] = 0;
 	while (nb >= 1000)
 		nb /= 1000;
-	return (ft_strjoin(ft_itoa((int) nb), ft_strdup(metric)));
+	return (ft_strjoin(ft_itoa((int)nb), ft_strdup(metric)));
 }

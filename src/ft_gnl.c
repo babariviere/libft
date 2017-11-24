@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:14:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 21:01:22 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 22:40:09 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,34 @@ static void				copy_and_crop(char **dest, char **src)
 		ft_strdel(src);
 }
 
+static void				free_fd_tracker(t_list **holder, const int fd)
+{
+	t_fd_tracker	*tmp;
+	t_list			*lst;
+	t_list			*lst_prev;
+
+	lst = *holder;
+	lst_prev = lst;
+	while (lst)
+	{
+		tmp = lst->content;
+		if (tmp->fd == fd)
+			break ;
+		lst_prev = lst;
+		lst = lst->next;
+	}
+	if (lst == 0)
+		return ;
+	if (lst_prev != lst)
+		lst_prev->next = lst->next;
+	if (*holder == lst)
+		*holder = lst->next;
+	if (tmp->buf)
+		ft_strdel(&tmp->buf);
+	ft_memdel((void **)&lst->content);
+	ft_memdel((void **)&lst);
+}
+
 int						ft_gnl(const int fd, char **line)
 {
 	static t_list	*holder;
@@ -90,11 +118,11 @@ int						ft_gnl(const int fd, char **line)
 	{
 		copy_and_crop(line, &fdt->buf);
 		if (fdt->buf == 0)
-			if ((fdt->buf = ft_strnew(0)) == 0)
-				return (-1);
+			free_fd_tracker(&holder, fd);
 		if (*line == 0)
 			return (-1);
 		return (1);
 	}
+	free_fd_tracker(&holder, fd);
 	return (0);
 }

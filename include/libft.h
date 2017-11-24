@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 16:20:10 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 17:05:26 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 void			ft_swap(int *a, int *b);
 void			ft_swap_ptr(void **ptr1, void **ptr2);
+size_t			ft_tablen(void **tab);
+void			**ft_join_tab(void **tab1, void **tab2);
 
 /*
 ** NUMBER

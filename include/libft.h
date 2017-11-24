@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 13:01:02 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/24 16:20:10 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,9 @@ char			*ft_strsub(const char *s, t_uint start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s);
 char			**ft_strsplit(const char *s, char c);
+void			ft_strsort(char **strs, int (*cmp)(const char *, const char *));
+void			ft_strremove(char **strs, size_t idx);
+void			ft_strdedup(char **strs);
 
 /*
 ** CHARS

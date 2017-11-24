@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_formatted.c                               :+:      :+:    :+:   */
+/*   ft_strsort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/24 09:43:45 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 16:34:26 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 15:53:02 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/24 16:49:00 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_formatted(t_formatted *formatted)
+void	ft_strsort(char **strs, int (*cmp)(const char *, const char *))
 {
 	size_t	idx;
+	size_t	sub_idx;
 
 	idx = 0;
-	while (idx < formatted->len)
+	while (strs[idx] && strs[idx + 1])
 	{
-		ft_putstr(formatted->tab[idx]);
-		ft_putchar_mul(' ', formatted->padding[idx]);
+		sub_idx = idx + 1;
+		while (strs[sub_idx])
+		{
+			if (cmp(strs[idx], strs[sub_idx]) > 0)
+				ft_swap_ptr((void **)(strs + idx), (void **)(strs + sub_idx));
+			sub_idx++;
+		}
 		idx++;
 	}
 }

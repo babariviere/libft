@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 11:54:03 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/23 13:24:05 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/23 13:18:28 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/23 13:24:18 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_itoa_rec(char *res, int n)
+size_t		ft_numlen(int n)
 {
-	int		idx;
+	size_t	len;
 
-	idx = 0;
+	len = 1;
 	if (n < 0)
 	{
-		res[idx] = '-';
-		res++;
+		len++;
 		n = -n;
 	}
-	if (n >= 10)
-		idx = ft_itoa_rec(res, n / 10);
-	res[idx++] = (n % 10) + '0';
-	return (idx);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*res;
-
-	if (n == FT_INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if ((res = ft_strnew(ft_numlen(n))) == 0)
-		return (0);
-	ft_itoa_rec(res, n);
-	return (res);
+	while (n >= 10)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }

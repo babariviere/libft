@@ -1,42 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_calibrate_formatted_range.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 11:54:03 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/23 13:24:05 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 09:46:12 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/24 09:47:19 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_itoa_rec(char *res, int n)
+void	ft_calibrate_formatted_range(t_formatted **formatteds, size_t start,
+		size_t end, size_t diff_idx)
 {
-	int		idx;
-
-	idx = 0;
-	if (n < 0)
-	{
-		res[idx] = '-';
-		res++;
-		n = -n;
-	}
-	if (n >= 10)
-		idx = ft_itoa_rec(res, n / 10);
-	res[idx++] = (n % 10) + '0';
-	return (idx);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*res;
-
-	if (n == FT_INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if ((res = ft_strnew(ft_numlen(n))) == 0)
-		return (0);
-	ft_itoa_rec(res, n);
-	return (res);
+	while (start < end)
+		ft_calibrate_formatted(formatteds, start++, diff_idx);
 }

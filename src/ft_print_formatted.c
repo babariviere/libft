@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_print_formatted.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 11:54:03 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/23 13:24:05 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 09:43:45 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/24 09:44:23 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_itoa_rec(char *res, int n)
+void	ft_print_formatted(t_formatted *formatted)
 {
-	int		idx;
+	size_t	idx;
 
 	idx = 0;
-	if (n < 0)
+	while (idx < formatted->len)
 	{
-		res[idx] = '-';
-		res++;
-		n = -n;
+		ft_putstr(formatted->tab[idx]);
+		if (idx < formatted->len - 1)
+			ft_putchar_mul(' ', formatted->padding[idx]);
+		idx++;
 	}
-	if (n >= 10)
-		idx = ft_itoa_rec(res, n / 10);
-	res[idx++] = (n % 10) + '0';
-	return (idx);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*res;
-
-	if (n == FT_INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if ((res = ft_strnew(ft_numlen(n))) == 0)
-		return (0);
-	ft_itoa_rec(res, n);
-	return (res);
 }

@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_add_formatted_str.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 11:54:03 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/23 13:24:05 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 09:41:57 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/24 09:43:21 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_itoa_rec(char *res, int n)
+void	ft_add_formatted_str(t_formatted *formatted, char *str,
+		int next_padding)
 {
-	int		idx;
-
-	idx = 0;
-	if (n < 0)
-	{
-		res[idx] = '-';
-		res++;
-		n = -n;
-	}
-	if (n >= 10)
-		idx = ft_itoa_rec(res, n / 10);
-	res[idx++] = (n % 10) + '0';
-	return (idx);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*res;
-
-	if (n == FT_INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if ((res = ft_strnew(ft_numlen(n))) == 0)
-		return (0);
-	ft_itoa_rec(res, n);
-	return (res);
+	formatted->tab[formatted->idx] = str;
+	formatted->padding[formatted->idx] = next_padding;
+	formatted->idx++;
 }

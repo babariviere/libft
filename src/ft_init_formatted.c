@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_init_formatted.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 11:54:03 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/23 13:24:05 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 09:16:01 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/24 09:40:57 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_itoa_rec(char *res, int n)
+t_formatted		*ft_init_formatted(size_t len)
 {
-	int		idx;
+	t_formatted	*formatted;
 
-	idx = 0;
-	if (n < 0)
-	{
-		res[idx] = '-';
-		res++;
-		n = -n;
-	}
-	if (n >= 10)
-		idx = ft_itoa_rec(res, n / 10);
-	res[idx++] = (n % 10) + '0';
-	return (idx);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*res;
-
-	if (n == FT_INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if ((res = ft_strnew(ft_numlen(n))) == 0)
+	if ((formatted = ft_memalloc(sizeof(t_formatted))) == 0)
 		return (0);
-	ft_itoa_rec(res, n);
-	return (res);
+	(formatted)->len = len;
+	if ((formatted->tab =
+			ft_memalloc(sizeof(char *) * formatted->len)) == 0)
+		return (0);
+	if ((formatted->padding =
+			ft_memalloc(sizeof(int) * formatted->len)) == 0)
+		return (0);
+	formatted->padding[formatted->len - 1] = 0;
+	formatted->idx = 0;
+	return (formatted);
 }

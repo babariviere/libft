@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 17:03:15 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/28 09:50:29 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/28 09:54:17 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ void	**ft_join_tab(void **tab1, void **tab2)
 	ft_memcpy(res, tab1, tab1l * sizeof(void *));
 	ft_memcpy(res + tab1l, tab2, tab2l * sizeof(void *));
 	res[tab1l + tab2l] = 0;
+	ft_memdel(tab1);
+	ft_memdel(tab2);
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 00:43:33 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 00:44:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*ft_stoa_human_dec_sub(size_t nb, size_t dec)
 	char	*tmp_str;
 
 	nbr_str = ft_itoa(nb);
-	if (nb < 10 && dec >= 1000)
+	if (nb >= 10 || dec < 1000)
 		return (nbr_str);
 	dec_str = ft_itoa((dec / 100) % 10);
 	tmp_str = ft_strjoin(nbr_str, ".");

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 17:05:33 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/28 10:03:14 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/30 22:59:02 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 size_t	ft_tablen(const void *tab, size_t elem)
 {
-	size_t	len;
+	size_t			len;
+	const t_uchar	*tptr;
 
 	len = 0;
-	while (*(char *)(tab + (len * elem)))
+	tptr = tab;
+	while (ft_memcmp(tab + (len * elem), 0, elem) == 0)
 		len++;
 	return (len);
 }

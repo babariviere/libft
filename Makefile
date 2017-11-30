@@ -55,7 +55,7 @@ SRC_NAME=ft_add_fmt_str.c\
 		 ft_putnbr_octal.c\
 		 ft_putstr.c\
 		 ft_putstr_fd.c\
-		 ft_sort_formatteds.c\
+		 ft_sort_fmts.c\
 		 ft_sqrt.c\
 		 ft_stoa_human_dec.c\
 		 ft_strcat.c\

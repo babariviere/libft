@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calibrate_formatted_range.c                     :+:      :+:    :+:   */
+/*   ft_print_fmt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/24 09:46:12 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:23:45 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 09:43:45 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/30 21:35:49 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_calibrate_formatted_range(t_formatted **formatteds, size_t start,
-		size_t end, size_t diff_idx)
+void	ft_print_fmt(t_fmt *fmt)
 {
-	while (start <= end)
-		ft_calibrate_formatted(formatteds, start++, diff_idx);
+	size_t	idx;
+
+	idx = 0;
+	while (idx < fmt->len && fmt->tab[idx])
+	{
+		ft_putstr(fmt->tab[idx]);
+		if (fmt->tab[idx + 1])
+			ft_putchar_mul(' ', fmt->padding[idx]);
+		idx++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/28 10:04:29 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/30 21:35:34 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,25 +171,25 @@ typedef struct	s_arg
 t_list			*ft_argparse(int ac, char **av);
 
 /*
-** FORMATTED STRINGS
+** fmt STRINGS
 */
-typedef struct	s_formatted {
+typedef struct	s_fmt {
 	char	**tab;
 	int		*padding;
 	size_t	idx;
 	size_t	len;
-}				t_formatted;
+}				t_fmt;
 
-t_formatted		*ft_init_formatted(size_t len);
-void			ft_add_formatted_str(t_formatted *formatted,
+t_fmt		*ft_init_fmt(size_t len);
+void			ft_add_fmt_str(t_fmt *fmt,
 		char *str, int next_padding);
-void			ft_print_formatted(t_formatted *formatted);
-void			ft_calibrate_formatted(t_formatted **formatteds,
+void			ft_print_fmt(t_fmt *fmt);
+void			ft_calibrate_fmt(t_fmt **fmts,
 		size_t tab_idx, size_t diff_idx);
-void			ft_calibrate_formatted_range(t_formatted **formatteds,
+void			ft_calibrate_fmt_range(t_fmt **fmts,
 		size_t start, size_t end, size_t diff_idx);
-void			ft_sort_formatteds(t_formatted **formatteds, size_t tab_idx,
+void			ft_sort_fmts(t_fmt **fmts, size_t tab_idx,
 		int (*cmp)(const char *, const char *));
-void			ft_free_formatted(t_formatted **formatted);
+void			ft_free_fmt(t_fmt **fmt);
 
 #endif

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_formatted.c                                :+:      :+:    :+:   */
+/*   ft_free_fmt.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:03:00 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:15:30 by briviere         ###   ########.fr       */
+/*   Updated: 2017/11/30 21:36:05 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_formatted(t_formatted **formatted)
+void	ft_free_fmt(t_fmt **fmt)
 {
-	t_formatted	*tmp;
+	t_fmt	*tmp;
 
-	if (formatted == 0 || *formatted == 0)
+	if (fmt == 0 || *fmt == 0)
 		return ;
-	tmp = *formatted;
+	tmp = *fmt;
 	tmp->idx = 0;
 	while (tmp->idx < tmp->len)
 		ft_strdel(&tmp->tab[tmp->idx++]);
 	ft_memdel((void **)&tmp->padding);
-	ft_memdel((void **)formatted);
+	ft_memdel((void **)fmt);
 }

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 02:20:28 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 02:43:52 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*ft_stoa_human_sub(double nb)
 	if (fracpart == 0)
 		return (ft_itoa(nb));
 	fracpart = (fracpart / 10) + ((fracpart % 10) >= 5);
-	nb += ((fracpart % 10) == 0);
+	nb += ((fracpart % 11) == 10);
 	if (nb >= 10)
 		return (ft_itoa(nb + (fracpart >= 5)));
 	nbr_str = ft_itoa(nb);

@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 02:19:27 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 02:20:28 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_stoa_human_sub(float nb)
+static char	*ft_stoa_human_sub(double nb)
 {
 	int		intpart;
 	int		fracpart;
@@ -42,8 +42,8 @@ char		*ft_stoa_human(size_t nb, int into_bytes)
 	char	*nb_str;
 	char	*tmp;
 	char	metric[2];
-	float	thresh;
-	float	res;
+	double	thresh;
+	double	res;
 
 	if (into_bytes)
 		metric[0] = ft_human_metric_bin(nb);

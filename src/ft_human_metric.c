@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:41:27 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 01:20:49 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 01:25:29 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char	ft_human_metric(size_t nb)
 	if (nb < 1000000)
 		return ('K');
 	if (nb < 1000000000)
-		return ('G');
+		return ('M');
 	if (nb < 1000000000000)
-		return ('T');
+		return ('G');
 	if (nb < 1000000000000000)
-		return ('P');
+		return ('T');
 	if (nb < 1000000000000000000)
-		return ('E');
+		return ('P');
 	if (nb >= 1000000000000000000)
-		return ('Z');
+		return ('E');
 	return (0);
 }

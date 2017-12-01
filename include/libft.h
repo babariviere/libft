@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 01:22:56 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 01:38:01 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,11 @@ void			*ft_join_tab(const void *tab1, const void *tab2,
 /*
 ** NUMBER
 */
-char			ft_human_metric(size_t nb);
+char			ft_human_metric_bin(size_t nb);
+char			ft_human_metric_dec(size_t nb);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int nb);
-char			*ft_stoa_human_dec(size_t nb);
+char			*ft_stoa_human(size_t nb, int into_bytes);
 size_t			ft_numlen(int nb);
 
 /*

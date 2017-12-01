@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stoa_human_dec.c                                :+:      :+:    :+:   */
+/*   ft_stoa_human.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 01:21:44 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 01:38:58 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_stoa_human_dec_sub(size_t nb, size_t dec)
+static char	*ft_stoa_human_sub(size_t nb, size_t dec, size_t thresh)
 {
 	char	*nbr_str;
 	char	*dec_str;
 	char	*tmp_str;
 
 	nbr_str = ft_itoa(nb);
-	if (nb >= 10 || dec < 1000)
+	if (nb >= 10 || dec < thresh)
 		return (nbr_str);
-	dec_str = ft_itoa((dec / 101) % 10);
+	dec_str = ft_itoa((dec / 100) % 10);
 	tmp_str = ft_strjoin(nbr_str, ".");
 	free(nbr_str);
 	nbr_str = ft_strjoin(tmp_str, dec_str);
@@ -29,22 +29,27 @@ static char	*ft_stoa_human_dec_sub(size_t nb, size_t dec)
 	return (nbr_str);
 }
 
-char		*ft_stoa_human_dec(size_t nb)
+char		*ft_stoa_human(size_t nb, int into_bytes)
 {
 	char	*nb_str;
 	char	*tmp;
 	char	metric[2];
 	size_t	prev;
+	size_t	thresh;
 
-	metric[0] = ft_human_metric(nb);
+	if (into_bytes)
+		metric[0] = ft_human_metric_bin(nb);
+	else
+		metric[0] = ft_human_metric_dec(nb);
 	metric[1] = 0;
 	prev = 0;
-	while (nb >= 1000)
+	thresh = (into_bytes ? 1024 : 1000);
+	while (nb >= thresh)
 	{
 		prev = nb;
-		nb /= 1000;
+		nb /= thresh;
 	}
-	tmp = ft_stoa_human_dec_sub(nb, prev);
+	tmp = ft_stoa_human_sub(nb, prev, thresh);
 	nb_str = ft_strjoin(tmp, ft_strdup(metric));
 	free(tmp);
 	return (nb_str);

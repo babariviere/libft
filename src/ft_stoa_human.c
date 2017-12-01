@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 02:02:06 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 02:07:17 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_stoa_human_sub(size_t nb, size_t dec, size_t thresh)
+static char	*ft_stoa_human_sub(size_t nb, size_t dec)
 {
 	char	*nbr_str;
 	char	*dec_str;
@@ -53,7 +53,7 @@ char		*ft_stoa_human(size_t nb, int into_bytes)
 		prev = nb;
 		nb /= thresh;
 	}
-	tmp = ft_stoa_human_sub(nb, prev, thresh);
+	tmp = ft_stoa_human_sub(nb, prev);
 	nb_str = ft_strjoin(tmp, ft_strdup(metric));
 	free(tmp);
 	return (nb_str);

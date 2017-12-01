@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:38:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 01:46:35 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 01:58:20 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*ft_stoa_human_sub(size_t nb, size_t dec, size_t thresh)
 	if (nb >= 10 || dec < thresh)
 		return (ft_itoa(nb));
 	dec = dec / 100 + ((dec / 10) >= 5);
-	nbr_str = ft_itoa(nb + (dec == 0));
+	nbr_str = ft_itoa(nb + ((dec % 10) == 0));
 	dec_str = ft_itoa(dec % 10);
 	tmp_str = ft_strjoin(nbr_str, ".");
 	free(nbr_str);

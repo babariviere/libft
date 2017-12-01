@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_human_metric_dec.c                              :+:      :+:    :+:   */
+/*   ft_human_metric_bin.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:41:27 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 10:49:51 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/01 01:07:13 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_human_metric_dec(size_t nb)
+char	ft_human_metric_bin(size_t nb)
 {
-	if (nb < 1000)
+	if (nb < 1024)
 		return ('B');
-	if (nb < 1000000)
+	if (nb < 1048576)
 		return ('K');
-	if (nb < 1000000000)
+	if (nb < 1073741824)
 		return ('G');
-	if (nb < 1000000000000)
+	if (nb < 1099511627776)
 		return ('T');
-	if (nb < 1000000000000000)
+	if (nb < 1125899906842624)
 		return ('P');
-	if (nb < 1000000000000000000)
+	if (nb < 1152921504606846976)
 		return ('E');
-	if (nb >= 1000000000000000000)
+	if (nb >= 1152921504606846976)
 		return ('Z');
 	return (0);
 }

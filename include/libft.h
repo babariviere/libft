@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/01 01:38:01 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/05 09:21:49 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,25 +154,7 @@ t_list			*ft_lstfind(const t_list *lst,
 t_list			*ft_lstat(const t_list *lst, size_t idx);
 
 /*
-** ARGS
-*/
-typedef	enum	e_argkind
-{
-	arg_exec,
-	arg_command,
-	arg_flag,
-	arg_value
-}				t_argkind;
-typedef struct	s_arg
-{
-	char		*name;
-	char		*value;
-	t_argkind	kind;
-}				t_arg;
-t_list			*ft_argparse(int ac, char **av);
-
-/*
-** fmt STRINGS
+** FMT STRINGS
 */
 typedef struct	s_fmt {
 	char	**tab;

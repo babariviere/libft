@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/06 11:43:43 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/07 14:27:01 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,7 @@ void			ft_lstadd(t_list **alst, t_list *nw);
 void			ft_lstpush(t_list **alst, t_list *nw);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void			ft_lstswap(t_list **lst1, t_list **lst2);
 size_t			ft_lstlen(const t_list *lst);
 t_list			*ft_lstfind(const t_list *lst,
 		int (*f)(const void *content, const void *to_find),

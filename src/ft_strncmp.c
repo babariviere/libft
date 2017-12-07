@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:58:04 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/13 10:20:54 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:46:04 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	idx = 0;
 	s1_ptr = (const t_uchar *)s1;
 	s2_ptr = (const t_uchar *)s2;
-	while (idx < n - 1 && s1_ptr[idx] == s2_ptr[idx] && s1_ptr[idx])
+	while (idx < n - 1 && s1_ptr[idx] == s2_ptr[idx])
+	{
+		if (s1_ptr[idx] == 0)
+			break ;
 		idx++;
+	}
 	return (s1_ptr[idx] - s2_ptr[idx]);
 }

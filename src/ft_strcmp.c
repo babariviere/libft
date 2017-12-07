@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:57:07 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/07 13:45:24 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:48:56 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	const t_uchar	*s1ptr;
-	const t_uchar	*s2ptr;
-
-	s1ptr = (const t_uchar *)s1;
-	s2ptr = (const t_uchar *)s2;
-	while (*s1ptr == *s2ptr)
+	while (*s1 == *s2)
 	{
-		if (*s1ptr == 0)
+		if (*s1 == 0)
 			break ;
-		s1ptr++;
-		s2ptr++;
+		s1++;
+		s2++;
 	}
-	return (*s1ptr - *s2ptr);
+	return (*(const t_uchar *)s1 - *(const t_uchar *)s2);
 }

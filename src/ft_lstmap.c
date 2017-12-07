@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:48:55 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/08 16:32:49 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/07 15:03:52 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		tmp = f(lst);
 		res->next = ft_lstnew(tmp->content, tmp->content_size);
+		free(tmp);
 		if (res->next == 0)
 			return (0);
 		if (start == 0)

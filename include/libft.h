@@ -6,17 +6,15 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 08:47:37 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 09:38:55 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define FT_INT_MAX 2147483647
-# define FT_INT_MIN -2147483648
-
 # include "ft_gnl.h"
+# include <limits.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>

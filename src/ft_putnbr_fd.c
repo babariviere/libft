@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:04:13 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/16 11:30:30 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 09:38:39 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		if (n == FT_INT_MIN)
+		if (n == INT_MIN)
 		{
 			ft_putstr_fd("2147483648", fd);
 			return ;

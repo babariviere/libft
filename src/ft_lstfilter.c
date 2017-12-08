@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 15:08:17 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/07 15:17:15 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 09:27:38 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list		*ft_lstfilter(t_list *lst, int (*f)(t_list *elem))
 	while (lst)
 	{
 		if (f(lst))
-			ft_lstpush(&res, lst);
+			ft_lstpush(&res, ft_lstnew(lst->content, lst->content_size));
 		lst = lst->next;
 	}
 	return (res);

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 09:38:55 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 16:57:37 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,29 +131,55 @@ void			ft_putendl_fd(const char *str, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 /*
-** LIST
+** LINKED LIST
 */
 typedef struct	s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
-}				t_list;
+}				t_lst;
 
-t_list			*ft_lstnew(const void *content, size_t content_size);
-t_list			*ft_lstnew_mv(const void *content, size_t content_size);
-void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstadd(t_list **alst, t_list *nw);
-void			ft_lstpush(t_list **alst, t_list *nw);
-void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list			*ft_lstfilter(t_list *lst, int (*f)(t_list *elem));
-size_t			ft_lstlen(const t_list *lst);
-t_list			*ft_lstfind(const t_list *lst,
+t_lst			*ft_lstnew(const void *content, size_t content_size);
+t_lst			*ft_lstnew_mv(const void *content, size_t content_size);
+void			ft_lstdelone(t_lst **alst, void (*del)(void *, size_t));
+void			ft_lstdel(t_lst **alst, void (*del)(void *, size_t));
+void			ft_lstadd(t_lst **alst, t_lst *nw);
+void			ft_lstpush(t_lst **alst, t_lst *nw);
+void			ft_lstiter(t_lst *lst, void (*f)(t_lst *elem));
+t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem));
+t_lst			*ft_lstfilter(t_lst *lst, int (*f)(t_lst *elem));
+size_t			ft_lstlen(const t_lst *lst);
+t_lst			*ft_lstfind(const t_lst *lst,
 		int (*f)(const void *content, const void *to_find),
 		void *to_find);
-t_list			*ft_lstget(const t_list *lst, size_t idx);
+t_lst			*ft_lstget(const t_lst *lst, size_t idx);
+
+/*
+** DOUBLE LINKED LIST
+*/
+typedef struct	s_dlist
+{
+	void			*content;
+	size_t			content_size;
+	struct s_dlist	*prev;
+	struct s_dlist	*next;
+}				t_dlst;
+
+t_dlst			*ft_dlstnew(const void *content, size_t content_size);
+t_dlst			*ft_dlstnew_mv(const void *content, size_t content_size);
+void			ft_dlstdelone(t_dlst **alst, void (*del)(void *, size_t));
+void			ft_dlstdel(t_dlst **alst, void (*del)(void *, size_t));
+void			ft_dlstadd(t_dlst **alst, t_dlst *nw);
+void			ft_dlstpush(t_dlst **alst, t_dlst *nw);
+void			ft_dlstiter(t_dlst *lst, void (*f)(t_dlst *elem));
+t_dlst			*ft_dlstmap(t_dlst *lst, t_dlst *(*f)(t_dlst *elem));
+t_dlst			*ft_dlstfilter(t_dlst *list, int (*f)(t_dlst *elem));
+size_t			ft_dlstlen(const t_dlst *lst);
+t_dlst			*ft_dlstfind(const t_dlst *lst,
+		int (*f)(const void *content, const void *to_find),
+		void *to_find);
+t_dlst			*ft_dlstget(const t_dlst *lst, size_t idx);
 
 /*
 ** FMT STRINGS

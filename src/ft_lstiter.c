@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:42:58 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/08 15:43:43 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:08:16 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_lst *lst, void (*f)(t_lst *elem))
 {
 	while (lst)
 	{

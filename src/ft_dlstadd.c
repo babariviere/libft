@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_dlstadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:38:32 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 17:07:32 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:00:48 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *nw)
+void	ft_dlstadd(t_dlst **alst, t_dlst *nw)
 {
 	nw->next = *alst;
+	nw->next->prev = nw;
 	*alst = nw;
 }

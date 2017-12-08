@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_dlstiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 15:38:32 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 17:07:32 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 15:42:58 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/08 17:04:12 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *nw)
+void	ft_dlstiter(t_dlst *lst, void (*f)(t_dlst *elem))
 {
-	nw->next = *alst;
-	*alst = nw;
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

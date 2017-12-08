@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_dlstget.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 15:38:32 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 17:07:32 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/17 16:42:14 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/08 17:06:18 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *nw)
+t_dlst	*ft_dlstget(const t_dlst *lst, size_t idx)
 {
-	nw->next = *alst;
-	*alst = nw;
+	while (idx--)
+		lst = lst->next;
+	return ((t_dlst *)lst);
 }

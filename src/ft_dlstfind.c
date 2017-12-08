@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_dlstfind.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 15:38:32 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 17:07:32 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/16 12:18:44 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/08 17:06:06 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *nw)
+t_dlst		*ft_dlstfind(const t_dlst *lst,
+		int (*f)(const void *content, const void *to_find),
+		void *to_find)
 {
-	nw->next = *alst;
-	*alst = nw;
+	while (lst)
+	{
+		if (f(lst->content, to_find) == 1)
+			return ((t_dlst *)lst);
+		lst = lst->next;
+	}
+	return (0);
 }

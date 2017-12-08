@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_dlstlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 15:38:32 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 17:07:32 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 15:51:45 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/08 17:05:56 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *nw)
+size_t		ft_dlstlen(const t_dlst *lst)
 {
-	nw->next = *alst;
-	*alst = nw;
+	size_t	count;
+
+	count = 0;
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

@@ -6,15 +6,15 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 10:22:52 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/09 10:23:57 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:08:50 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstpush(t_list **alst, t_list *nw)
+void	ft_lstpush(t_lst **alst, t_lst *nw)
 {
-	t_list	*tmp;
+	t_lst	*tmp;
 
 	if (*alst == 0)
 	{

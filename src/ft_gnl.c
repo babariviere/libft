@@ -6,16 +6,16 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:14:40 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 22:40:09 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:07:22 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_gnl.h"
 
-static t_fd_tracker		*find_fd_tracker_or_add(t_list **lst, const int fd)
+static t_fd_tracker		*find_fd_tracker_or_add(t_lst **lst, const int fd)
 {
 	t_fd_tracker	*tmp;
-	t_list			*lst_tmp;
+	t_lst			*lst_tmp;
 
 	lst_tmp = *lst;
 	while (lst_tmp)
@@ -71,11 +71,11 @@ static void				copy_and_crop(char **dest, char **src)
 		ft_strdel(src);
 }
 
-static void				free_fd_tracker(t_list **holder, const int fd)
+static void				free_fd_tracker(t_lst **holder, const int fd)
 {
 	t_fd_tracker	*tmp;
-	t_list			*lst;
-	t_list			*lst_prev;
+	t_lst			*lst;
+	t_lst			*lst_prev;
 
 	lst = *holder;
 	lst_prev = lst;
@@ -101,7 +101,7 @@ static void				free_fd_tracker(t_list **holder, const int fd)
 
 int						ft_gnl(const int fd, char **line)
 {
-	static t_list	*holder;
+	static t_lst	*holder;
 	t_fd_tracker	*fdt;
 	int				readed;
 

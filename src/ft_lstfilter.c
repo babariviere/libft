@@ -6,15 +6,15 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 15:08:17 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 09:27:38 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:07:49 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstfilter(t_list *lst, int (*f)(t_list *elem))
+t_lst		*ft_lstfilter(t_lst *lst, int (*f)(t_lst *elem))
 {
-	t_list	*res;
+	t_lst	*res;
 
 	res = 0;
 	while (lst)

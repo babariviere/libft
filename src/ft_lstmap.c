@@ -6,17 +6,17 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:48:55 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/07 15:03:52 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:08:20 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_lst	*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem))
 {
-	t_list	*start;
-	t_list	*res;
-	t_list	*tmp;
+	t_lst	*start;
+	t_lst	*res;
+	t_lst	*tmp;
 
 	res = ft_lstnew(0, 0);
 	start = res;

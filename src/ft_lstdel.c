@@ -6,16 +6,16 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:27:28 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/08 15:35:54 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:07:38 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdel(t_lst **alst, void (*del)(void *, size_t))
 {
-	t_list	*curr;
-	t_list	*next;
+	t_lst	*curr;
+	t_lst	*next;
 
 	curr = *alst;
 	while (curr)

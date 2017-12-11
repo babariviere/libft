@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/11 13:12:41 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/11 16:35:10 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,5 +203,10 @@ void			ft_calibrate_fmt_range(t_fmt **fmts,
 void			ft_sort_fmts(t_fmt **fmts, size_t tab_idx,
 		int (*cmp)(const char *, const char *));
 void			ft_free_fmt(t_fmt **fmt);
+
+/*
+** ENV
+*/
+char			*ft_env_var(char **envp, char *name);
 
 #endif

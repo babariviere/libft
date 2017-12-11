@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 16:35:53 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/11 16:41:47 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/11 16:42:51 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_env_var(char **envp, char *name)
 	{
 		if (ft_strncmp(envp[idx], name, len) == 0)
 			return (ft_strdup(ft_strchr(envp[idx], '=') + 1));
+		idx++;
 	}
 	return (0);
 }

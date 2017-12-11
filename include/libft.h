@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/11 09:46:29 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/11 10:34:08 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ void			ft_swap_ptr(void **ptr1, void **ptr2);
 size_t			ft_tablen(const void *tab, size_t elem_size);
 void			*ft_join_tab(const void *tab1, const void *tab2,
 		size_t elem_size);
-void			ft_qsort(void **tab, size_t len,
-		int (*cmp)(const void *, const void *));
 
 /*
 ** NUMBER

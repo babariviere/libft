@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/11 10:34:08 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/11 12:11:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(t_uint, char *));
 char			*ft_strmap(const char *s, char (*f)(char));
 char			*ft_strmapi(const char *s, char (*f)(t_uint, char));
-char			*ft_strsub(const char *s, t_uint start, size_t len);
+char			*ft_strsub(const char *s, size_t start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strjoin_sep(const char *s1, const char *sep,
 		const char *s2);

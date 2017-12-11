@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:36:00 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/10 13:56:14 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/11 12:12:12 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, t_uint start, size_t len)
+char	*ft_strsub(const char *s, size_t start, size_t len)
 {
 	char	*res;
 	size_t	idx;

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 11:18:33 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/12 11:20:04 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/12 11:20:21 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_print_tab(const char **str)
 		return ;
 	while (*str)
 	{
-		ft_putstr(*str);
+		ft_putendl(*str);
 		str++;
 	}
 }

@@ -7,7 +7,7 @@ SRC_NAME=\
 	ft_dlstmap.c ft_dlstnew.c ft_dlstnew_mv.c ft_dlstpush.c ft_free_fmt.c ft_gnl.c\
 	ft_human_metric_bin.c ft_human_metric_dec.c ft_init_fmt.c ft_isalnum.c\
 	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c ft_isprint.c ft_isupper.c\
-	ft_iswhitespace.c ft_itoa.c ft_join_tab.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c\
+	ft_iswhitespace.c ft_itoa.c ft_tabjoin.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c\
 	ft_lstfilter.c ft_lstfind.c ft_lstget.c ft_lstiter.c ft_lstlen.c ft_lstmap.c\
 	ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c ft_memalloc.c ft_memccpy.c ft_memchr.c\
 	ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_numlen.c\
@@ -21,7 +21,7 @@ SRC_NAME=\
 	ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strremove.c\
 	ft_strsort.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_swap.c\
 	ft_swap_ptr.c ft_tablen.c ft_tolower.c ft_toupper.c ft_skip_until.c\
-	ft_env_var.c
+	ft_env_get.c ft_env_set.c ft_realloc.c
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))

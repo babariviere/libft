@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_join_tab.c                                      :+:      :+:    :+:   */
+/*   ft_tabjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 17:03:15 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/28 10:04:56 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/12 09:02:03 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_join_tab(const void *tab1, const void *tab2, size_t elem_size)
+void	*ft_tabjoin(const void *tab1, const void *tab2, size_t elem_size)
 {
 	void	**res;
 	size_t	tab1l;

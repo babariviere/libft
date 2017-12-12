@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env_var.c                                       :+:      :+:    :+:   */
+/*   ft_env_get.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 16:35:53 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/11 16:52:15 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/12 09:02:35 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_env_var(char **envp, char *name)
+char	*ft_env_get(char **envp, char *name)
 {
 	size_t		idx;
 	size_t		len;

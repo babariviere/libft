@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/11 16:35:10 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/12 09:55:55 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ void			ft_memdel(void **ap);
 void			ft_swap(int *a, int *b);
 void			ft_swap_ptr(void **ptr1, void **ptr2);
 size_t			ft_tablen(const void *tab, size_t elem_size);
-void			*ft_join_tab(const void *tab1, const void *tab2,
+void			*ft_tabjoin(const void *tab1, const void *tab2,
 		size_t elem_size);
+void			*ft_realloc(void *ptr, size_t prev_size, size_t new_size);
 
 /*
 ** NUMBER
@@ -207,6 +208,7 @@ void			ft_free_fmt(t_fmt **fmt);
 /*
 ** ENV
 */
-char			*ft_env_var(char **envp, char *name);
+char			*ft_env_get(char **envp, char *name);
+void			ft_env_set(char ***envp, char *name, char *value);
 
 #endif

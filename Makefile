@@ -27,7 +27,7 @@ SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
 CC=clang
-CFLAGS=-Wall -Wextra -Werror -Iinclude
+CFLAGS=-Wall -Wextra -Werror -O3 -Iinclude
 
 all: $(NAME)
 

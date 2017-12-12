@@ -20,8 +20,8 @@ SRC_NAME=\
 	ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c\
 	ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strremove.c\
 	ft_strsort.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_swap.c\
-	ft_swap_ptr.c ft_tablen.c ft_tolower.c ft_toupper.c ft_skip_until.c\
-	ft_env_get.c ft_env_set.c ft_realloc.c
+	ft_swap_ptr.c ft_tablen.c ft_tolower.c ft_toupper.c ft_strchr_esc.c\
+	ft_env_get.c ft_env_set.c ft_realloc.c ft_env_init.c
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))

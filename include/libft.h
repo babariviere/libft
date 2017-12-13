@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/13 09:31:38 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/13 09:38:53 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,6 +212,7 @@ void			ft_free_fmt(t_fmt **fmt);
 char			*ft_env_get(char **envp, char *name);
 void			ft_env_set(char ***envp, char *name, char *value, int over);
 void			ft_env_set_ent(char ***envp, char *ent, int over);
+void			ft_env_rm(char ***envp, char *name);
 char			**ft_env_init(const char **envp);
 
 #endif

@@ -27,7 +27,8 @@ SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
 CC=clang
-CFLAGS=-Wall -Wextra -Werror -O3 -Iinclude
+CFLAGS=-Wall -Wextra -Werror -Iinclude
+OPTI=-O3
 
 all: $(NAME)
 
@@ -39,7 +40,7 @@ $(NAME_DBG): $(OBJ_DBG)
 
 obj/%.o: src/%.c
 	@mkdir -p obj
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
 
 obj_dbg/%.o: src/%.c
 	@mkdir -p obj_dbg

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:05:44 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/12 10:26:51 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/13 09:38:09 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char		*ft_strchr_esc(const char *str, char c)
 {
-
 	if (str == 0)
 		return (0);
 	while (*str && *str != c)

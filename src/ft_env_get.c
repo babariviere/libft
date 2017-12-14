@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 16:35:53 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/12 09:02:35 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/14 11:54:05 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_env_get(char **envp, char *name)
 	size_t		len;
 
 	idx = 0;
-	len = ft_strlen(name) - 1;
+	len = ft_strlen(name);
 	while (envp[idx])
 	{
 		if (ft_strncmp(envp[idx], name, len) == 0)

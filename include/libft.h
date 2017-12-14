@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/13 09:38:53 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/14 11:10:08 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,9 +199,9 @@ void			ft_add_fmt_str(t_fmt *fmt,
 		char *str, int next_padding);
 void			ft_print_fmt(t_fmt *fmt);
 void			ft_calibrate_fmt(t_fmt **fmts,
-		size_t tab_idx, size_t diff_idx);
+		size_t tab_idx, int diff_idx);
 void			ft_calibrate_fmt_range(t_fmt **fmts,
-		size_t start, size_t end, size_t diff_idx);
+		size_t start, size_t end, int diff_idx);
 void			ft_sort_fmts(t_fmt **fmts, size_t tab_idx,
 		int (*cmp)(const char *, const char *));
 void			ft_free_fmt(t_fmt **fmt);

@@ -6,14 +6,14 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 09:44:35 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/30 21:35:44 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/14 11:12:16 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_calibrate_fmt(t_fmt **fmts, size_t tab_idx,
-		size_t diff_idx)
+		int diff_idx)
 {
 	size_t	fmt_idx;
 	size_t	longest;

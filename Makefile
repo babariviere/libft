@@ -1,5 +1,6 @@
 NAME=libft.a
 NAME_DBG=libftdbg.a
+NAME_SAN=libftsan.a
 SRC_NAME=\
 	ft_add_fmt_str.c ft_atoi.c ft_bzero.c ft_calibrate_fmt.c\
 	ft_calibrate_fmt_range.c ft_dlstadd.c ft_dlstdel.c ft_dlstdelone.c\
@@ -26,9 +27,11 @@ SRC_NAME=\
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
+OBJ_SAN=$(patsubst src/%.c, obj_san/%.o, $(SRC))
 CC=clang
 CFLAGS=-Wall -Wextra -Werror -Iinclude
 OPTI=-O3
+SANFLAGS=-fsanitize=address
 
 all: $(NAME)
 
@@ -38,6 +41,9 @@ $(NAME): $(OBJ)
 $(NAME_DBG): $(OBJ_DBG)
 	ar rcs $(NAME_DBG) $(OBJ_DBG)
 
+$(NAME_SAN): $(OBJ_SAN)
+	ar rcs $(NAME_SAN) $(OBJ_SAN)
+
 obj/%.o: src/%.c
 	@mkdir -p obj
 	$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
@@ -46,14 +52,21 @@ obj_dbg/%.o: src/%.c
 	@mkdir -p obj_dbg
 	$(CC) $(CFLAGS) -g -c $< -o $@
 
+obj_san/%.o: src/%.c
+	@mkdir -p obj_san
+	$(CC) $(CFLAGS) $(SANFLAGS) -c $< -o $@
+
 norme:
 	@norminette $(SRC)
 
 debug: $(NAME_DBG)
 
+san: $(NAME_SAN)
+
 clean:
 	@rm -rf obj
 	@rm -rf obj_dbg
+	@rm -rf obj_san
 
 fclean: clean
 	@rm -f $(NAME)

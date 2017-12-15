@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 09:07:29 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 12:46:41 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 12:51:25 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void			ft_env_set(char ***envp_ptr, char *name, char *value, int over)
 	size_t		name_len;
 	char		*tmp;
 
-	if (name == 0)
-		return ;
 	envp = *envp_ptr;
 	idx = 0;
 	name_len = ft_strlen(name);
@@ -49,7 +47,8 @@ void			ft_env_set(char ***envp_ptr, char *name, char *value, int over)
 		}
 		idx++;
 	}
-	envp = ft_realloc(envp, (idx + 1) * sizeof(char *), (idx + 2) * sizeof(char *));
+	envp = ft_realloc(envp, (idx + 1) *
+			sizeof(char *), (idx + 2) * sizeof(char *));
 	envp[idx + 1] = 0;
 	envp[idx] = ft_strjoin_sep(name, "=", value);
 	*envp_ptr = envp;

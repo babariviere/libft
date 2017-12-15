@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 15:51:21 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 15:58:13 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,16 @@ char			*ft_strmapi(const char *s, char (*f)(t_uint, char));
 char			*ft_strsub(const char *s, size_t start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strjoin_sep(const char *s1, char sep, const char *s2);
-size_t			ft_strtab_len(const char **tab);
-char			*ft_strtab_join(const char **tab);
-char			*ft_strtab_join_sep(const char **tab, char sep);
+size_t			ft_strtab_len(char **tab);
+char			*ft_strtab_join(char **tab);
+char			*ft_strtab_join_sep(char **tab, char sep);
 char			*ft_strtrim(const char *s);
 char			**ft_strsplit(const char *s, char c);
 void			ft_strsort(char **strs, int (*cmp)(const char *, const char *));
 void			ft_strremove(char **strs, size_t idx);
 void			ft_strdedup(char **strs);
 char			*ft_strchr_esc(const char *str, char c);
-void			ft_print_tab(const char **str);
+void			ft_print_tab( char **str);
 char			*ft_strrepl(char *str, char *to_repl, char *with);
 
 /*

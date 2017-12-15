@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 14:57:54 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 15:00:47 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 15:58:49 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtab_join_sep(const char **tab, char sep)
+char	*ft_strtab_join_sep(char **tab, char sep)
 {
 	char	*res;
 	char	sep_str[2];

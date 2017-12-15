@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 14:49:34 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 14:55:16 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 15:58:40 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtab_join(const char **tab)
+char	*ft_strtab_join(char **tab)
 {
 	char	*res;
 	size_t	idx;

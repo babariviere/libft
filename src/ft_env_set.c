@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 09:07:29 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 12:51:25 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 15:03:04 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static char		*ft_env_set_sub(char **envp, char *name, char *value, int over)
 	if (over)
 		tmp = ft_strdup(value);
 	else
-		tmp = ft_strjoin_sep(ft_env_get(envp, name), ":", value);
-	res = ft_strjoin_sep(name, "=", tmp);
+		tmp = ft_strjoin_sep(ft_env_get(envp, name), ':', value);
+	res = ft_strjoin_sep(name, '=', tmp);
 	free(tmp);
 	return (res);
 }
@@ -50,6 +50,6 @@ void			ft_env_set(char ***envp_ptr, char *name, char *value, int over)
 	envp = ft_realloc(envp, (idx + 1) *
 			sizeof(char *), (idx + 2) * sizeof(char *));
 	envp[idx + 1] = 0;
-	envp[idx] = ft_strjoin_sep(name, "=", value);
+	envp[idx] = ft_strjoin_sep(name, '=', value);
 	*envp_ptr = envp;
 }

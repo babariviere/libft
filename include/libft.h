@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 14:59:26 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 15:51:21 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void			ft_strremove(char **strs, size_t idx);
 void			ft_strdedup(char **strs);
 char			*ft_strchr_esc(const char *str, char c);
 void			ft_print_tab(const char **str);
+char			*ft_strrepl(char *str, char *to_repl, char *with);
 
 /*
 ** CHARS

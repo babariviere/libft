@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/14 17:15:41 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/15 09:29:51 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ size_t			ft_tablen(const void *tab, size_t elem_size);
 void			*ft_tabjoin(const void *tab1, const void *tab2,
 		size_t elem_size);
 void			*ft_realloc(void *ptr, size_t prev_size, size_t new_size);
+void			ft_tabdel(void ***tabptr, size_t elem_size);
 
 /*
 ** NUMBER

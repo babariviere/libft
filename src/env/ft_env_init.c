@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 10:27:45 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 09:21:17 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/18 13:22:03 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_env_init(const char **envp)
+char	**ft_env_init(char **envp)
 {
 	char	**res;
 	size_t	idx;

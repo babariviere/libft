@@ -5,7 +5,8 @@ CHR_NAME=ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c\
 DLST_NAME=ft_dlstadd.c ft_dlstdel.c ft_dlstdelone.c ft_dlstfilter.c ft_dlstfind.c\
 		  ft_dlstget.c ft_dlstiter.c ft_dlstlen.c ft_dlstmap.c ft_dlstnew.c\
 		  ft_dlstnew_mv.c ft_dlstpush.c
-ENV_NAME=ft_env_get.c ft_env_init.c ft_env_rm.c ft_env_set.c ft_env_set_ent.c
+ENV_NAME=ft_env_get.c ft_env_init.c ft_env_rm.c ft_env_set.c ft_env_set_ent.c\
+		 ft_env_load.c
 FMT_NAME=ft_fmt_add_str.c ft_fmt_calibrate.c ft_fmt_calibrate_range.c ft_fmt_free.c\
 		 ft_fmt_init.c ft_fmt_print.c ft_fmts_sort.c
 GNL_NAME=ft_gnl.c

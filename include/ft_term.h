@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term_init.c                                     :+:      :+:    :+:   */
+/*   ft_term.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 16:37:59 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 17:31:08 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 17:31:04 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_term.h"
+#ifndef FT_TERM_H
+# define FT_TERM_H
 
-char	*ft_term_init(const char *termtype)
-{
-	char	*termbuf;
-	int		succ;
+# include "ft_str.h"
+# include <term.h>
 
-	if ((termbuf = ft_strnew(2048)) == 0)
-		return (0);
-	succ = tgetent(termbuf, termtype);
-	if (succ <= 0)
-		return (0);
-	return (termbuf);
-}
+char	*ft_term_init(const char *termtype);
+
+#endif

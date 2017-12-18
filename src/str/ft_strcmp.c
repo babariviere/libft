@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_str.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
@@ -21,5 +21,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return (*(const t_uchar *)s1 - *(const t_uchar *)s2);
+	return (*(const uint8_t *)s1 - *(const uint8_t *)s2);
 }

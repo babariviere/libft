@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_nbr.h"
 
 char	ft_human_metric_bin(size_t nb)
 {

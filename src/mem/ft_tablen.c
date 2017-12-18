@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 
 size_t	ft_tablen(const void *tab, size_t elem)
 {
 	size_t			len;
-	const t_uchar	*tptr;
-	t_uchar			nul[elem];
+	const uint8_t	*tptr;
+	uint8_t			nul[elem];
 
 	len = 0;
 	tptr = tab;

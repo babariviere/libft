@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_fmt.h"
 
 void	ft_fmt_add_str(t_fmt *fmt, char *str,
 		int next_padding)

@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	t_uchar			*dst_ptr;
-	const t_uchar	*src_ptr;
-	t_uchar			byte;
+	uint8_t			*dst_ptr;
+	const uint8_t	*src_ptr;
+	uint8_t			byte;
 
 	dst_ptr = dst;
 	src_ptr = src;

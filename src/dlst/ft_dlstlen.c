@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_dlst.h"
 
 size_t		ft_dlstlen(const t_dlst *lst)
 {

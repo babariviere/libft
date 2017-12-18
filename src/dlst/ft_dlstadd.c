@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_dlst.h"
 
 void	ft_dlstadd(t_dlst **alst, t_dlst *nw)
 {

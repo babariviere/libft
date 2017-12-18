@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 
 int				ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const t_uchar	*str1;
-	const t_uchar	*str2;
+	const uint8_t	*str1;
+	const uint8_t	*str2;
 
 	if (s1 == s2)
 		return (0);
-	str1 = (const t_uchar *)s1;
-	str2 = (const t_uchar *)s2;
+	str1 = (const uint8_t *)s1;
+	str2 = (const uint8_t *)s2;
 	while (n--)
 	{
 		if (*str1 != *str2)

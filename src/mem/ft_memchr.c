@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const t_uchar	*ptr;
-	t_uchar			byte;
+	const uint8_t	*ptr;
+	uint8_t			byte;
 
-	ptr = (const t_uchar *)s;
-	byte = (t_uchar)c;
+	ptr = (const uint8_t *)s;
+	byte = (uint8_t)c;
 	while (n--)
 	{
 		if (*ptr == byte)

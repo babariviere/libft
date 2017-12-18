@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_env.h"
 
 void	ft_env_set_ent(char ***envp, char *ent, int over)
 {

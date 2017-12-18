@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_fmt.h"
 
 void	ft_fmt_calibrate_range(t_fmt **fmts, size_t start,
 		size_t end, int diff_idx)

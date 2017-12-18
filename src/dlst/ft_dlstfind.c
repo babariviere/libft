@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_dlst.h"
 
 t_dlst		*ft_dlstfind(const t_dlst *lst,
 		int (*f)(const void *content, const void *to_find),

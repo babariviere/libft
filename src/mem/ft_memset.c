@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 #include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	t_uchar	*ptr;
-	t_uchar	byte;
+	uint8_t	*ptr;
+	uint8_t	byte;
 
 	byte = c;
 	ptr = b;

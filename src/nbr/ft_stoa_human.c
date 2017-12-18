@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_nbr.h"
 
 static char	*ft_stoa_human_sub(double nb)
 {

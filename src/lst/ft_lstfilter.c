@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_lst.h"
 
 t_lst		*ft_lstfilter(t_lst *lst, int (*f)(t_lst *elem))
 {

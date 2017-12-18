@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 
 void	*ft_tabjoin(const void *tab1, const void *tab2, size_t elem_size)
 {

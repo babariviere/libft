@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_dlst.h"
 
 void	ft_dlstdelone(t_dlst **alst, void (*del)(void *, size_t))
 {

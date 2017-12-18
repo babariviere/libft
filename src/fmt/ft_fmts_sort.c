@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_fmt.h"
 
 void	ft_fmts_sort(t_fmt **fmts, size_t tab_idx,
 		int (*cmp)(const char *, const char *))

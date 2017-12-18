@@ -1,5 +1,23 @@
 NAME=libft.a
 NAME_DBG=libftdbg.a
+CHR_NAME=ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c\
+		 ft_isprint.c ft_isupper.c ft_iswhitespace.c ft_tolower.c ft_toupper.c
+DLST_NAME=ft_dlstadd.c ft_dlstdel.c ft_dlstdelone.c ft_dlstfilter.c ft_dlstfind.c\
+		  ft_dlstget.c ft_dlstiter.c ft_dlstlen.c ft_dlstmap.c ft_dlstnew.c\
+		  ft_dlstnew_mv.c ft_dlstpush.c
+ENV_NAME=ft_env_get.c ft_env_init.c ft_env_rm.c ft_env_set.c ft_env_set_ent.c
+FMT_NAME=ft_fmt_add_str.c ft_fmt_calibrate.c ft_fmt_calibrate_range.c ft_fmt_free.c\
+		 ft_fmt_init.c ft_fmt_print.c ft_fmts_sort.c
+GNL_NAME=ft_gnl.c
+LST_NAME=ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstfilter.c ft_lstfind.c ft_lstget.c\
+		 ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c
+MEM_NAME=ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
+		 ft_memdel.c ft_memmove.c ft_memset.c ft_realloc.c ft_swap.c\
+		 ft_swap_ptr.c ft_tabjoin.c ft_tablen.c
+NBR_NAME=ft_atoi.c ft_human_metric_bin.c ft_human_metric_dec.c ft_itoa.c ft_numlen.c\
+		 ft_pow.c ft_sqrt.c ft_stoa_human.c
+PUT_NAME=ft_putchar.c ft_putchar_fd.c ft_putchar_mul.c ft_putendl.c ft_putend_fd.c\
+
 SRC_NAME=\
 	ft_add_fmt_str.c ft_atoi.c ft_bzero.c ft_calibrate_fmt.c\
 	ft_calibrate_fmt_range.c ft_dlstadd.c ft_dlstdel.c ft_dlstdelone.c\
@@ -39,11 +57,11 @@ $(NAME_DBG): $(OBJ_DBG)
 	ar rcs $(NAME_DBG) $(OBJ_DBG)
 
 obj/%.o: src/%.c
-	@mkdir -p obj
+	@mkdir -p $(basename $@)
 	$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
 
 obj_dbg/%.o: src/%.c
-	@mkdir -p obj_dbg
+	@mkdir -p $(basename $@)
 	$(CC) $(CFLAGS) -g -c $< -o $@
 
 norme:

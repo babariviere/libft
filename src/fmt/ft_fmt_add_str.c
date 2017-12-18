@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_fmt.c                                     :+:      :+:    :+:   */
+/*   ft_fmt_add_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/24 09:43:45 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/07 16:26:13 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/24 09:41:57 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 11:10:09 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_fmt(t_fmt *fmt)
+void	ft_fmt_add_str(t_fmt *fmt, char *str,
+		int next_padding)
 {
-	size_t	idx;
-
-	idx = 0;
-	while (idx < fmt->idx && fmt->tab[idx])
-	{
-		ft_putstr(fmt->tab[idx]);
-		if (fmt->tab[idx + 1] && (idx + 1) < fmt->idx)
-			ft_putchar_mul(' ', fmt->padding[idx]);
-		idx++;
-	}
+	fmt->tab[fmt->idx] = str;
+	fmt->padding[fmt->idx] = next_padding;
+	fmt->idx++;
 }

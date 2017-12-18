@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env_rm.c                                        :+:      :+:    :+:   */
+/*   ft_env_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/13 09:39:02 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/13 10:08:21 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/12 10:27:45 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/15 09:21:17 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_env_rm(char ***envp_ptr, char *name)
+char	**ft_env_init(const char **envp)
 {
-	char		**envp;
-	size_t		idx;
-	size_t		len;
-	size_t		name_len;
+	char	**res;
+	size_t	idx;
+	size_t	len;
 
-	idx = 0;
-	envp = *envp_ptr;
 	len = ft_tablen(envp, sizeof(char *));
-	name_len = ft_strlen(name) - 1;
+	if ((res = malloc(sizeof(char *) *
+					(len + 1))) == 0)
+		return (0);
+	idx = 0;
 	while (idx < len)
 	{
-		if (ft_strncmp(envp[idx], name, name_len) == 0)
-		{
-			ft_swap_ptr((void **)(envp + idx), (void **)(envp + len - 1));
-			ft_memdel((void **)(envp + len - 1));
-			len--;
-			envp = ft_realloc(envp, len * sizeof(char *),
-					(len + 1) * sizeof(char *));
-			envp[len] = 0;
-			*envp_ptr = envp;
-			return ;
-		}
+		res[idx] = ft_strdup(envp[idx]);
 		idx++;
 	}
+	res[idx] = 0;
+	return (res);
 }

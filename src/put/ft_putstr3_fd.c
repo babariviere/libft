@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_formatted_str.c                             :+:      :+:    :+:   */
+/*   ft_putstr3_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/24 09:41:57 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/30 21:36:53 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 14:12:46 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 09:51:23 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_add_fmt_str(t_fmt *fmt, char *str,
-		int next_padding)
+void	ft_putstr3_fd(const char *str1, const char *str2, const char *str3,
+		int fd)
 {
-	fmt->tab[fmt->idx] = str;
-	fmt->padding[fmt->idx] = next_padding;
-	fmt->idx++;
+	ft_putstr_fd(str1, fd);
+	ft_putstr_fd(str2, fd);
+	ft_putstr_fd(str3, fd);
 }

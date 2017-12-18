@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_fmt.c                                      :+:      :+:    :+:   */
+/*   ft_putstr3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/24 09:16:01 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/30 21:35:59 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/06 16:46:29 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 09:48:46 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_fmt		*ft_init_fmt(size_t len)
+void	ft_putstr3(const char *str1, const char *str2, const char *str3)
 {
-	t_fmt	*fmt;
-
-	if ((fmt = ft_memalloc(sizeof(t_fmt))) == 0)
-		return (0);
-	(fmt)->len = len;
-	if ((fmt->tab =
-			ft_memalloc(sizeof(char *) * fmt->len)) == 0)
-		return (0);
-	if ((fmt->padding =
-			ft_memalloc(sizeof(int) * fmt->len)) == 0)
-		return (0);
-	fmt->padding[fmt->len - 1] = 0;
-	fmt->idx = 0;
-	return (fmt);
+	ft_putstr(str1);
+	ft_putstr(str2);
+	ft_putstr(str3);
 }

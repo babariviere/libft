@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env_init.c                                      :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 10:27:45 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/12 10:29:17 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 14:13:33 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 09:51:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_env_init(const char **envp)
+void	ft_putendl_fd(const char *str, int fd)
 {
-	char	**res;
-	size_t	idx;
-
-	if ((res = malloc(sizeof(char *) * ft_tablen(envp, sizeof(char *)))) == 0)
-		return (0);
-	idx = 0;
-	while (envp[idx])
-	{
-		res[idx] = ft_strdup(envp[idx]);
-		idx++;
-	}
-	res[idx] = 0;
-	return (res);
+	if (str)
+		ft_putstr_fd(str, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/14 11:10:08 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:47:28 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ size_t			ft_tablen(const void *tab, size_t elem_size);
 void			*ft_tabjoin(const void *tab1, const void *tab2,
 		size_t elem_size);
 void			*ft_realloc(void *ptr, size_t prev_size, size_t new_size);
+void			ft_tabdel(void ***tabptr, size_t elem_size);
 
 /*
 ** NUMBER
@@ -59,6 +60,8 @@ size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
+char			*ft_strcpy_esc(char *dst, const char *src);
+char			*ft_strncpy_esc(char *dst, const char *src, size_t len);
 char			*ft_strcat(char *dst, const char *src);
 char			*ft_strncat(char *dst, const char *src, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
@@ -81,15 +84,18 @@ char			*ft_strmap(const char *s, char (*f)(char));
 char			*ft_strmapi(const char *s, char (*f)(t_uint, char));
 char			*ft_strsub(const char *s, size_t start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
-char			*ft_strjoin_sep(const char *s1, const char *sep,
-		const char *s2);
+char			*ft_strjoin_sep(const char *s1, char sep, const char *s2);
+size_t			ft_strtab_len(char **tab);
+char			*ft_strtab_join(char **tab);
+char			*ft_strtab_join_sep(char **tab, char sep);
 char			*ft_strtrim(const char *s);
 char			**ft_strsplit(const char *s, char c);
 void			ft_strsort(char **strs, int (*cmp)(const char *, const char *));
 void			ft_strremove(char **strs, size_t idx);
 void			ft_strdedup(char **strs);
 char			*ft_strchr_esc(const char *str, char c);
-void			ft_print_tab(const char **str);
+void			ft_print_tab( char **str);
+char			*ft_strrepl(char *str, char *to_repl, char *with);
 
 /*
 ** CHARS
@@ -117,7 +123,13 @@ int				ft_pow(int nb, int pow);
 void			ft_putchar(char c);
 void			ft_putchar_mul(char c, size_t count);
 void			ft_putstr(const char *str);
+void			ft_putstr2(const char *str1, const char *str2);
+void			ft_putstr3(const char *str1, const char *str2,
+		const char *str3);
 void			ft_putendl(const char *str);
+void			ft_putendl2(const char *str1, const char *str2);
+void			ft_putendl3(const char *str1, const char *str2,
+		const char *str3);
 void			ft_putnbr(int n);
 void			ft_putnbr_base(int nb, char *base);
 void			ft_putnbr_bin(int nb);
@@ -130,7 +142,13 @@ int				ft_puterr(int err, char *str);
 */
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(const char *str, int fd);
+void			ft_putstr2_fd(const char *str1, const char *str2, int fd);
+void			ft_putstr3_fd(const char *str1, const char *str2,
+		const char *str3, int fd);
 void			ft_putendl_fd(const char *str, int fd);
+void			ft_putendl2_fd(const char *str1, const char *str2, int fd);
+void			ft_putendl3_fd(const char *str1, const char *str2,
+		const char *str3, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 /*

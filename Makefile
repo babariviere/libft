@@ -74,5 +74,6 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(NAME_DBG)
+	@rm -f $(NAME_SAN)
 
 re: fclean all

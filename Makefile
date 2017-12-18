@@ -25,7 +25,8 @@ SRC_NAME=\
 	ft_env_get.c ft_env_set.c ft_realloc.c ft_env_init.c ft_print_tab.c\
 	ft_env_set_ent.c ft_env_rm.c ft_strcpy_esc.c ft_strncpy_esc.c\
 	ft_tabdel.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
-	ft_strrepl.c
+	ft_strrepl.c ft_putstr2.c ft_putstr3.c ft_putendl2.c ft_putendl3.c\
+	ft_putstr2_fd.c ft_putstr3_fd.c ft_putendl2_fd.c ft_putendl3_fd.c
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))

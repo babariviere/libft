@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:13:33 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 09:51:59 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/06 16:46:29 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 09:48:11 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(const char *str, int fd)
+void	ft_putstr2(const char *str1, const char *str2)
 {
-	if (str)
-		ft_putstr_fd(str, fd);
-	ft_putchar_fd('\n', fd);
+	ft_putstr(str1);
+	ft_putstr(str2);
 }

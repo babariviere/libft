@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 15:58:13 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:47:28 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,13 @@ int				ft_pow(int nb, int pow);
 void			ft_putchar(char c);
 void			ft_putchar_mul(char c, size_t count);
 void			ft_putstr(const char *str);
+void			ft_putstr2(const char *str1, const char *str2);
+void			ft_putstr3(const char *str1, const char *str2,
+		const char *str3);
 void			ft_putendl(const char *str);
+void			ft_putendl2(const char *str1, const char *str2);
+void			ft_putendl3(const char *str1, const char *str2,
+		const char *str3);
 void			ft_putnbr(int n);
 void			ft_putnbr_base(int nb, char *base);
 void			ft_putnbr_bin(int nb);
@@ -136,7 +142,13 @@ int				ft_puterr(int err, char *str);
 */
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(const char *str, int fd);
+void			ft_putstr2_fd(const char *str1, const char *str2, int fd);
+void			ft_putstr3_fd(const char *str1, const char *str2,
+		const char *str3, int fd);
 void			ft_putendl_fd(const char *str, int fd);
+void			ft_putendl2_fd(const char *str1, const char *str2, int fd);
+void			ft_putendl3_fd(const char *str1, const char *str2,
+		const char *str3, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 /*

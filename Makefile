@@ -29,13 +29,13 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strremove.c ft_strrepl.c ft_strsort.c\
 		 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
 		 ft_strtrim.c
-TERM_NAME=ft_term_init.c ft_term_type.c
+TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME)) $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME)) $(addprefix fmt/, $(FMT_NAME))\
 		 $(addprefix gnl/, $(GNL_NAME)) $(addprefix lst/, $(LST_NAME))\
 		 $(addprefix mem/, $(MEM_NAME)) $(addprefix nbr/, $(NBR_NAME))\
 		 $(addprefix put/, $(PUT_NAME)) $(addprefix str/, $(STR_NAME))\
-		 $(addprefix term/, $(PUT_NAME))
+		 $(addprefix term/, $(TERM_NAME))
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))

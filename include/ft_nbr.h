@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:40:53 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 16:59:14 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 15:20:23 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ int				ft_atoi(const char *str);
 char			*ft_itoa(int nb);
 char			*ft_stoa_human(size_t nb, int into_bytes);
 size_t			ft_numlen(int nb);
+
+/*
+** MATH
+*/
 int				ft_sqrt(int nb);
 int				ft_pow(int nb, int pow);
+int				ft_ceil(float nb);
 
 #endif

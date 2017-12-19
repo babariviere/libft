@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 09:39:02 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/14 16:22:50 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 11:16:34 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void		ft_env_rm(char ***envp_ptr, char *name)
 	char		**envp;
 	size_t		idx;
 	size_t		len;
-	size_t		name_len;
+	size_t		nlen;
 
 	idx = 0;
 	envp = *envp_ptr;
 	len = ft_tablen(envp, sizeof(char *));
-	name_len = ft_strlen(name) - 1;
+	nlen = ft_strlen(name);
 	while (idx < len)
 	{
-		if (ft_strncmp(envp[idx], name, name_len) == 0)
+		if (ft_strncmp(envp[idx], name, nlen) == 0 && envp[idx][nlen] == '=')
 		{
 			ft_memdel((void **)(envp + idx));
 			len--;

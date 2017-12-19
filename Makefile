@@ -1,5 +1,6 @@
 NAME=libft.a
 NAME_DBG=libftdbg.a
+NAME_SAN=libftsan.a
 CHR_NAME=ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c\
 		 ft_isprint.c ft_isupper.c ft_iswhitespace.c ft_tolower.c ft_toupper.c
 DLST_NAME=ft_dlstadd.c ft_dlstdel.c ft_dlstdelone.c ft_dlstfilter.c ft_dlstfind.c\
@@ -39,9 +40,11 @@ SRC_NAME=$(addprefix chr/, $(CHR_NAME)) $(addprefix dlst/, $(DLST_NAME))\
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))
 OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
+OBJ_SAN=$(patsubst src/%.c, obj_san/%.o, $(SRC))
 CC=clang
 CFLAGS=-Wall -Wextra -Werror -Iinclude
 OPTI=-O3
+SANFLAGS=-fsanitize=address
 
 all: $(NAME)
 
@@ -51,6 +54,9 @@ $(NAME): $(OBJ)
 $(NAME_DBG): $(OBJ_DBG)
 	ar rcs $(NAME_DBG) $(OBJ_DBG)
 
+$(NAME_SAN): $(OBJ_SAN)
+	ar rcs $(NAME_SAN) $(OBJ_SAN)
+
 obj/%.o: src/%.c
 	@mkdir -p $(basename $@)
 	$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
@@ -59,17 +65,25 @@ obj_dbg/%.o: src/%.c
 	@mkdir -p $(basename $@)
 	$(CC) $(CFLAGS) -g -c $< -o $@
 
+obj_san/%.o: src/%.c
+	@mkdir -p $(basename $@)
+	$(CC) $(CFLAGS) $(SANFLAGS) -c $< -o $@
+
 norme:
 	@norminette $(SRC)
 
 debug: $(NAME_DBG)
 
+san: $(NAME_SAN)
+
 clean:
 	@rm -rf obj
 	@rm -rf obj_dbg
+	@rm -rf obj_san
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(NAME_DBG)
+	@rm -f $(NAME_SAN)
 
 re: fclean all

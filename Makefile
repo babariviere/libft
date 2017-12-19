@@ -30,7 +30,7 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strremove.c ft_strrepl.c ft_strsort.c\
 		 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
 		 ft_strtrim.c
-TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c
+TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME)) $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME)) $(addprefix fmt/, $(FMT_NAME))\
 		 $(addprefix gnl/, $(GNL_NAME)) $(addprefix lst/, $(LST_NAME))\

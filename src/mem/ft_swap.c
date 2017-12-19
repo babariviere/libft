@@ -6,13 +6,13 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 12:57:44 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/24 12:58:08 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 09:23:39 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mem.h"
 
-void	ft_swap(int *a, int *b)
+inline void	ft_swap(int *a, int *b)
 {
 	int	tmp;
 

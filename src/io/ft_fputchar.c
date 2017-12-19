@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_fputchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:12:46 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 20:09:48 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/19 10:31:23 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/19 10:35:35 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putstr_fd(const char *str, int fd)
+int		ft_fputchar(int c)
 {
-	write(fd, str, ft_strlen(str));
+	unsigned char	ca;
+
+	ca = c;
+	return (write(1, &ca, 1));
 }

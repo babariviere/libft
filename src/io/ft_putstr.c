@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl3_fd.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:13:33 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 09:52:53 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/06 16:46:29 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/21 20:09:34 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putendl3_fd(const char *str1, const char *str2, const char *str3,
-		int fd)
+void	ft_putstr(const char *str)
 {
-	ft_putstr_fd(str1, fd);
-	ft_putstr_fd(str2, fd);
-	ft_putstr_fd(str3, fd);
-	ft_putchar_fd('\n', fd);
+	write(1, str, ft_strlen(str));
 }

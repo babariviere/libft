@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr2_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:12:46 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 09:50:52 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/06 16:46:06 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/10 13:40:18 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putstr2_fd(const char *str1, const char *str2, int fd)
+void	ft_putchar(char c)
 {
-	ft_putstr_fd(str1, fd);
-	ft_putstr_fd(str2, fd);
+	write(1, &c, 1);
 }

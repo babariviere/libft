@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puterr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/21 10:26:28 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 10:27:22 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 14:04:13 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/08 09:38:29 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-int		ft_puterr(int err, char *str)
+void	ft_putnbr(int n)
 {
-	ft_putendl_fd(str, 2);
-	return (err);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		if (n == INT_MIN)
+		{
+			ft_putstr("2147483648");
+			return ;
+		}
+		else
+			n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	ft_putchar((n % 10) + '0');
 }

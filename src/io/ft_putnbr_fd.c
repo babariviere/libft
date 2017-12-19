@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_mul.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 13:00:09 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/22 13:01:08 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 14:04:13 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/08 09:38:39 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putchar_mul(char c, size_t count)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	tab[count];
-	size_t	idx;
-
-	idx = 0;
-	while (idx < count)
-		tab[idx++] = c;
-	write(1, tab, count);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		if (n == INT_MIN)
+		{
+			ft_putstr_fd("2147483648", fd);
+			return ;
+		}
+		else
+			n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }

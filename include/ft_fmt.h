@@ -6,15 +6,15 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:48:29 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 16:56:50 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 11:58:19 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_FMT_H
 # define FT_FMT_H
 
+# include "ft_io.h"
 # include "ft_mem.h"
-# include "ft_put.h"
 # include "ft_str.h"
 # include <string.h>
 

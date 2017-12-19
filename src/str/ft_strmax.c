@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fputchar.c                                      :+:      :+:    :+:   */
+/*   ft_strmax.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/19 10:31:23 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 10:35:35 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/19 12:55:14 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/19 12:56:48 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_str.h"
 
-int		ft_fputchar(int c)
+size_t		ft_strmax(char **strs)
 {
-	unsigned char	ca;
+	size_t	max;
+	size_t	curr;
+	size_t	idx;
 
-	ca = c;
-	return (write(1, &ca, 1));
+	max = 0;
+	idx = 0;
+	while (strs[idx])
+	{
+		curr = ft_strlen(strs[idx]);
+		if (curr > max)
+			max = curr;
+		idx++;
+	}
+	return (max);
 }

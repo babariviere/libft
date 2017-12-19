@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:42:24 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 17:21:30 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 12:54:53 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void		ft_strremove(char **strs, size_t idx);
 void		ft_strdedup(char **strs);
 char		*ft_strchr_esc(const char *str, char c);
 char		*ft_strrepl(char *str, char *to_repl, char *with);
+size_t		ft_strmax(char **strs);
 
 #endif

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl2.c                                      :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:03:31 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 09:49:32 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/12 11:06:02 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putendl2(const char *str1, const char *str2)
+void	ft_putendl(const char *str)
 {
-	ft_putstr(str1);
-	ft_putstr(str2);
+	if (str)
+		ft_putstr(str);
 	ft_putchar('\n');
 }

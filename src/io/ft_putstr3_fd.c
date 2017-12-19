@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
 void	ft_putstr3_fd(const char *str1, const char *str2, const char *str3,
 		int fd)

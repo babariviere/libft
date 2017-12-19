@@ -21,7 +21,7 @@
 # include "ft_lst.h"
 # include "ft_mem.h"
 # include "ft_nbr.h"
-# include "ft_put.h"
+# include "ft_io.h"
 # include "ft_str.h"
 # include "ft_term.h"
 

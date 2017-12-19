@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:04:13 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 09:38:39 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/06 16:46:29 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/18 09:48:46 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putstr3(const char *str1, const char *str2, const char *str3)
 {
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		if (n == INT_MIN)
-		{
-			ft_putstr_fd("2147483648", fd);
-			return ;
-		}
-		else
-			n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd((n % 10) + '0', fd);
+	ft_putstr(str1);
+	ft_putstr(str2);
+	ft_putstr(str3);
 }

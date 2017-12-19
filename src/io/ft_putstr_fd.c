@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_bin.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/21 20:07:59 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 20:09:00 by briviere         ###   ########.fr       */
+/*   Created: 2017/11/08 14:12:46 by briviere          #+#    #+#             */
+/*   Updated: 2017/11/21 20:09:48 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "ft_io.h"
 
-void	ft_putnbr_bin(int nb)
+void	ft_putstr_fd(const char *str, int fd)
 {
-	ft_putstr("0b");
-	ft_putnbr_base(nb, "01");
+	write(fd, str, ft_strlen(str));
 }

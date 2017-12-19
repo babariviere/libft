@@ -22,7 +22,7 @@ PUT_NAME=ft_putchar.c ft_putchar_fd.c ft_putchar_mul.c ft_putendl.c ft_putendl2.
 		 ft_putendl2_fd.c ft_putendl3.c ft_putendl3_fd.c ft_putendl_fd.c ft_puterr.c\
 		 ft_putnbr.c ft_putnbr_base.c ft_putnbr_bin.c ft_putnbr_fd.c ft_putnbr_hex.c\
 		 ft_putnbr_octal.c ft_putstr.c ft_putstr2.c ft_putstr2_fd.c ft_putstr3.c\
-		 ft_putstr3_fd.c ft_putstr_fd.c
+		 ft_putstr3_fd.c ft_putstr_fd.c ft_fputchar.c
 STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strcmp_rev.c ft_strcpy.c ft_strcpy_esc.c ft_strdedup.c ft_strdel.c ft_strdup.c\
 		 ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strjoin_sep.c ft_strlcat.c\
@@ -31,7 +31,7 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
 		 ft_strtrim.c
 TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c\
-		  ft_term_cur_mv.c
+		  ft_term_cur_mv.c ft_term_cm.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME)) $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME)) $(addprefix fmt/, $(FMT_NAME))\
 		 $(addprefix gnl/, $(GNL_NAME)) $(addprefix lst/, $(LST_NAME))\

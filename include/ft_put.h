@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:44:38 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 16:59:44 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 10:34:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 
 void	ft_putchar(char c);
+int		ft_fputchar(int c);
 void	ft_putchar_mul(char c, size_t count);
 void	ft_putstr(const char *str);
 void	ft_putstr2(const char *str1, const char *str2);

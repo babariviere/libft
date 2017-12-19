@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term.h                                          :+:      :+:    :+:   */
+/*   ft_term_type.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 09:06:09 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/19 09:03:53 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/19 09:11:54 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TERM_H
-# define FT_TERM_H
+#include "ft_term.h"
 
-# include "ft_env.h"
-# include "ft_str.h"
-# include <term.h>
+char	*ft_term_type(void)
+{
+	char	**env;
+	char	*type;
 
-char	*ft_term_init(const char *termtype);
-char	*ft_term_type(void);
-
-#endif
+	env = *ft_env_load();
+	type = ft_env_get(env, "TERMCAP");
+	if (type == 0)
+		type = ft_env_get(env, "TERM");
+	return (0);
+}

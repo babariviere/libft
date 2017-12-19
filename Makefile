@@ -31,7 +31,7 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
 		 ft_strtrim.c ft_strmax.c
 TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c\
-		  ft_term_cur_mv.c ft_term_cm.c ft_term_hidein.c
+		  ft_term_cur_mv.c ft_term_cm.c ft_term_hidein.c ft_term_us.c ft_term_ue.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME))\
 		 $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME))\

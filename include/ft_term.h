@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 13:30:53 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 15:43:05 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ char	*ft_term_cm(char **termbuf);
 void	ft_term_cur_mv(char **termbuf, int hpos, int vpos);
 
 void	ft_term_hidein(void);
+
+char	*ft_term_us(char **termbuf);
+char	*ft_term_ue(char **termbuf);
 
 #endif

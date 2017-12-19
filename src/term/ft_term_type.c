@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 09:03:53 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 09:11:54 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/19 09:28:19 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ char	*ft_term_type(void)
 	type = ft_env_get(env, "TERMCAP");
 	if (type == 0)
 		type = ft_env_get(env, "TERM");
-	return (0);
+	return (type);
 }

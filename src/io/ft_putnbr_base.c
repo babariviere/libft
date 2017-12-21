@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 14:21:11 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 15:12:27 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 15:32:54 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ static int		ft_is_base_valid(char *base)
 	return (1);
 }
 
-static void		ft_putnbr_base_inner(long nb, int base_len, char *base)
+static void		ft_putnbr_base_inner(unsigned int nb, unsigned int base_len,
+		char *base)
 {
 	if (nb >= base_len)
 		ft_putnbr_base_inner(nb / base_len, base_len, base);
@@ -45,16 +46,16 @@ static void		ft_putnbr_base_inner(long nb, int base_len, char *base)
 
 void			ft_putnbr_base(int nb, char *base)
 {
-	long	nb_long;
-	int		base_len;
+	unsigned long	nb_long;
+	unsigned long	base_len;
 
 	nb_long = nb;
 	if (!ft_is_base_valid(base))
 		return ;
 	base_len = ft_strlen(base);
-	if (nb_long < 0 && base_len == 10)
+	if (nb < 0 && base_len == 10)
 	{
-		nb_long = nb_long * -1;
+		nb_long = nb * -1;
 		ft_putchar('-');
 	}
 	ft_putnbr_base_inner(nb_long, base_len, base);

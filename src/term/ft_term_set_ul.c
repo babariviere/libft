@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 09:36:47 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 09:37:21 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 09:45:21 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_term_set_ul(int state)
 {
 	if (state)
-		ft_term_us(0);
+		tputs(ft_term_us(0), 1, ft_fputchar);
 	else
-		ft_term_ue(0);
+		tputs(ft_term_ue(0), 1, ft_fputchar);
 }

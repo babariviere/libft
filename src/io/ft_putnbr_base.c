@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 14:21:11 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 14:22:22 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 15:12:27 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void			ft_putnbr_base(int nb, char *base)
 	if (!ft_is_base_valid(base))
 		return ;
 	base_len = ft_strlen(base);
-	if (nb_long < 0)
+	if (nb_long < 0 && base_len == 10)
 	{
 		nb_long = nb_long * -1;
 		ft_putchar('-');

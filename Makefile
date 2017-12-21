@@ -33,7 +33,8 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c\
 		  ft_term_cur_mv.c ft_term_cm.c ft_term_hidein.c ft_term_us.c ft_term_ue.c\
 		  ft_term_mb.c ft_term_md.c ft_term_mh.c ft_term_mk.c ft_term_mp.c\
-		  ft_term_mr.c ft_term_me.c ft_term_ti.c ft_term_te.c ft_term_cl.c
+		  ft_term_mr.c ft_term_me.c ft_term_ti.c ft_term_te.c ft_term_cl.c\
+		  ft_term_set_alt_scr.c ft_term_set_ul.c ft_term_set_rv.c ft_term_putat.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME))\
 		 $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME))\

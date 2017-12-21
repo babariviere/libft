@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 09:24:36 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 09:33:38 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,18 @@ int		ft_term_row(void);
 void	ft_term_clr(void);
 /* Move cursor to pos */
 void	ft_term_cur_mv(t_pos pos);
+/* Put at pos */
+void	ft_term_putat(char *str, t_pos pos);
 
 /* Hide input */
 void	ft_term_hidein(void);
+
+/* Set alternative screen state */
+void	ft_term_set_alt_scr(int state);
+/* Set underline state */
+void	ft_term_set_ul(int state);
+/* Set reverse video state */
+void	ft_term_set_rv(int state);
 
 /*
 ** GETTER AND SETTER

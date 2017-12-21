@@ -6,17 +6,17 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 15:57:55 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 16:00:32 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 09:17:08 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_term.h"
 
-void	ft_term_me(char **termeuf)
+char	*ft_term_me(char **termbuf)
 {
 	static char	*me;
 	
-	if (me == 0)
-		me = tgetstr("me", termeuf);
-	tputs(me, 1, ft_fputchar);
+	if (termbuf)
+		me = tgetstr("me", termbuf);
+	return (me);
 }

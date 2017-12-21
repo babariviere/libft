@@ -6,13 +6,31 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:37:59 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 17:31:08 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 09:23:05 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_term.h"
 
-char	*ft_term_init(const char *termtype)
+static void		ft_init_all(char **termbuf)
+{
+	ft_term_cl(termbuf);
+	ft_term_cm(termbuf);
+	ft_term_mb(termbuf);
+	ft_term_md(termbuf);
+	ft_term_me(termbuf);
+	ft_term_mh(termbuf);
+	ft_term_mk(termbuf);
+	ft_term_mp(termbuf);
+	ft_term_mr(termbuf);
+	ft_term_me(termbuf);
+	ft_term_te(termbuf);
+	ft_term_ti(termbuf);
+	ft_term_ue(termbuf);
+	ft_term_us(termbuf);
+}
+
+char			*ft_term_init(const char *termtype, int set_all)
 {
 	char	*termbuf;
 	int		succ;
@@ -22,5 +40,7 @@ char	*ft_term_init(const char *termtype)
 	succ = tgetent(termbuf, termtype);
 	if (succ <= 0)
 		return (0);
+	if (set_all)
+		ft_init_all(&termbuf);
 	return (termbuf);
 }

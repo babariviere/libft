@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term_us.c                                       :+:      :+:    :+:   */
+/*   ft_term_cl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/19 15:34:27 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 09:21:00 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/21 09:14:54 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/21 09:15:46 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_term.h"
 
-char	*ft_term_us(char **termbuf)
+char	*ft_term_cl(char **termbuf)
 {
-	static char	*us;
+	static char		*cl;
 
 	if (termbuf)
-		us = tgetstr("us", termbuf);
-	return (us);
+		cl = tgetstr("cl", termbuf);
+	return (cl);
 }

@@ -6,27 +6,24 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 09:07:29 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/15 15:03:04 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/21 09:29:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_env.h"
 
-static char		*ft_env_set_sub(char **envp, char *name, char *value, int over)
+static char		*ft_env_set_sub(char *name, char *value)
 {
 	char	*tmp;
 	char	*res;
 
-	if (over)
-		tmp = ft_strdup(value);
-	else
-		tmp = ft_strjoin_sep(ft_env_get(envp, name), ':', value);
+	tmp = ft_strdup(value);
 	res = ft_strjoin_sep(name, '=', tmp);
 	free(tmp);
 	return (res);
 }
 
-void			ft_env_set(char ***envp_ptr, char *name, char *value, int over)
+void			ft_env_set(char ***envp_ptr, char *name, char *value)
 {
 	char		**envp;
 	size_t		idx;
@@ -40,7 +37,7 @@ void			ft_env_set(char ***envp_ptr, char *name, char *value, int over)
 	{
 		if (ft_strncmp(envp[idx], name, name_len) == 0)
 		{
-			tmp = ft_env_set_sub(envp, name, value, over);
+			tmp = ft_env_set_sub(name, value);
 			free(envp[idx]);
 			envp[idx] = tmp;
 			return ;

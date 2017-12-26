@@ -6,14 +6,14 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:39:41 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/26 14:15:06 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/26 14:18:33 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEM_H
 # define FT_MEM_H
 
-# define FT_PTR_CHK(x) if (x == 0) { return (0); }
+# define FT_PTR_CHK(x) if ((x) == 0) { return (0); }
 # include <stdlib.h>
 
 void		*ft_memset(void *b, int c, size_t len);

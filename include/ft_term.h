@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/26 11:20:21 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/26 15:24:26 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_term_hidein(void);
 void	ft_term_set_alt_scr(int state);
 void	ft_term_set_ul(int state);
 void	ft_term_set_rv(int state);
+void	ft_term_set_cur_vis(int state);
 
 char	*ft_term_cl(char **termbuf);
 char	*ft_term_cm(char **termbuf);
@@ -47,5 +48,7 @@ char	*ft_term_te(char **termbuf);
 char	*ft_term_ti(char **termbuf);
 char	*ft_term_ue(char **termbuf);
 char	*ft_term_us(char **termbuf);
+char	*ft_term_vi(char **termbuf);
+char	*ft_term_ve(char **termbuf);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:37:59 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 09:23:05 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/26 15:53:18 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void		ft_init_all(char **termbuf)
 	ft_term_ti(termbuf);
 	ft_term_ue(termbuf);
 	ft_term_us(termbuf);
+	ft_term_vi(termbuf);
+	ft_term_ve(termbuf);
 }
 
 char			*ft_term_init(const char *termtype, int set_all)

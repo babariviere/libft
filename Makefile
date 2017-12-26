@@ -23,6 +23,8 @@ IO_NAME=ft_putchar.c ft_putchar_fd.c ft_putchar_mul.c ft_putendl.c ft_putendl2.c
 		 ft_putnbr.c ft_putnbr_base.c ft_putnbr_bin.c ft_putnbr_fd.c ft_putnbr_hex.c\
 		 ft_putnbr_octal.c ft_putstr.c ft_putstr2.c ft_putstr2_fd.c ft_putstr3.c\
 		 ft_putstr3_fd.c ft_putstr_fd.c ft_fputchar.c ft_putwchar.c
+STK_NAME=ft_stack_init.c ft_stack_push.c ft_stack_pop.c ft_stack_len.c\
+		 ft_stack_isempty.c
 STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strcmp_rev.c ft_strcpy.c ft_strcpy_esc.c ft_strdedup.c ft_strdel.c ft_strdup.c\
 		 ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strjoin_sep.c ft_strlcat.c\
@@ -44,6 +46,7 @@ SRC_NAME=$(addprefix chr/, $(CHR_NAME))\
 		 $(addprefix lst/, $(LST_NAME))\
 		 $(addprefix mem/, $(MEM_NAME))\
 		 $(addprefix nbr/, $(NBR_NAME))\
+		 $(addprefix stack/, $(STK_NAME))\
 		 $(addprefix str/, $(STR_NAME))\
 		 $(addprefix term/, $(TERM_NAME))
 SRC=$(addprefix src/, $(SRC_NAME))

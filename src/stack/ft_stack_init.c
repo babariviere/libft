@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term_mp.c                                       :+:      :+:    :+:   */
+/*   ft_stack_init.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/19 15:57:55 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/26 11:22:34 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/26 11:27:45 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/26 11:28:31 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_term.h"
+#include "ft_stack.h"
 
-char	*ft_term_mp(char **termbuf)
+void	ft_stack_init(t_stackptr stack)
 {
-	static char	*mp;
-
-	if (termbuf)
-		mp = tgetstr("mp", termbuf);
-	return (mp);
+	stack->idx = 0;
+	ft_bzero(stack->data, sizeof(void *) * FT_STACK_SIZE);
 }

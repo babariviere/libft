@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term_mp.c                                       :+:      :+:    :+:   */
+/*   ft_stack_isempty.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/19 15:57:55 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/26 11:22:34 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/26 11:36:21 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/26 11:36:48 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_term.h"
+#include "ft_stack.h"
 
-char	*ft_term_mp(char **termbuf)
+inline int	ft_stack_isempty(t_stack stack)
 {
-	static char	*mp;
-
-	if (termbuf)
-		mp = tgetstr("mp", termbuf);
-	return (mp);
+	return (stack.idx == 0);
 }

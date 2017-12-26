@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 09:33:38 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/26 11:20:21 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,20 @@
 # include <term.h>
 # include <termios.h>
 
-/* init termcap and return termbuffer, call all setter if set_all */
 char	*ft_term_init(const char *termtype, int set_all);
 char	*ft_term_type(void);
-/* Column number */
 int		ft_term_col(void);
-/* Row number */
 int		ft_term_row(void);
-/* Clear window */
 void	ft_term_clr(void);
-/* Move cursor to pos */
 void	ft_term_cur_mv(t_pos pos);
-/* Put at pos */
 void	ft_term_putat(char *str, t_pos pos);
 
-/* Hide input */
 void	ft_term_hidein(void);
 
-/* Set alternative screen state */
 void	ft_term_set_alt_scr(int state);
-/* Set underline state */
 void	ft_term_set_ul(int state);
-/* Set reverse video state */
 void	ft_term_set_rv(int state);
 
-/*
-** GETTER AND SETTER
-*/
 char	*ft_term_cl(char **termbuf);
 char	*ft_term_cm(char **termbuf);
 char	*ft_term_mb(char **termbuf);

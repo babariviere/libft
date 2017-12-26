@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 15:57:55 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 09:10:41 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/26 11:22:46 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_term_mk(char **termbuf)
 {
 	static char	*mk;
-	
+
 	if (termbuf)
 		mk = tgetstr("mk", termbuf);
 	return (mk);

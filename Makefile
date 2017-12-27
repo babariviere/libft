@@ -22,7 +22,7 @@ IO_NAME=ft_putchar.c ft_putchar_fd.c ft_putchar_mul.c ft_putendl.c ft_putendl2.c
 		 ft_putendl2_fd.c ft_putendl3.c ft_putendl3_fd.c ft_putendl_fd.c ft_puterr.c\
 		 ft_putnbr.c ft_putnbr_base.c ft_putnbr_bin.c ft_putnbr_fd.c ft_putnbr_hex.c\
 		 ft_putnbr_octal.c ft_putstr.c ft_putstr2.c ft_putstr2_fd.c ft_putstr3.c\
-		 ft_putstr3_fd.c ft_putstr_fd.c ft_putwchar.c
+		 ft_putstr3_fd.c ft_putstr_fd.c ft_putwchar.c ft_putwchar_fd.c
 STK_NAME=ft_stack_init.c ft_stack_push.c ft_stack_pop.c ft_stack_len.c\
 		 ft_stack_isempty.c
 STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
@@ -38,7 +38,7 @@ TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.
 		  ft_term_mr.c ft_term_me.c ft_term_ti.c ft_term_te.c ft_term_cl.c\
 		  ft_term_set_alt_scr.c ft_term_set_ul.c ft_term_set_rv.c ft_term_putat.c\
 		  ft_term_vi.c ft_term_ve.c ft_term_set_cur_vis.c ft_term_tty.c\
-		  ft_puttty.c
+		  ft_puttty.c ft_putwtty.c ft_term_putwat.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME))\
 		 $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME))\

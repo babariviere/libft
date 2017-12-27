@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 09:27:50 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/27 09:54:12 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ enum	e_tty_act {
 
 int		ft_term_tty(enum e_tty_act act);
 int		ft_puttty(int c);
+int		ft_putwtty(int c);
 
 char	*ft_term_init(const char *termtype, int set_all);
 char	*ft_term_type(void);
@@ -36,6 +37,7 @@ int		ft_term_row(void);
 void	ft_term_clr(void);
 void	ft_term_cur_mv(t_pos pos);
 void	ft_term_putat(char *str, t_pos pos);
+void	ft_term_putwat(char *str, t_pos pos);
 
 void	ft_term_hidein(void);
 

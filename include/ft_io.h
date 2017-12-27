@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:44:38 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 09:27:43 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/27 09:50:12 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 void	ft_putchar(char c);
 int		ft_putwchar(wchar_t c);
+int		ft_putwchar_fd(int fd, wchar_t c);
 void	ft_putchar_mul(char c, size_t count);
 void	ft_putstr(const char *str);
 void	ft_putstr2(const char *str1, const char *str2);

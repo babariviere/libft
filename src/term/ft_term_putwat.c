@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwchar.c                                      :+:      :+:    :+:   */
+/*   ft_term_putwat.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/27 09:50:20 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 09:50:55 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/21 09:38:38 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/27 09:52:28 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_io.h"
+#include "ft_term.h"
 
-inline int	ft_putwchar(wchar_t c)
+void	ft_term_putwat(char *str, t_pos pos)
 {
-	return (ft_putwchar_fd(1, c));
+	ft_term_cur_mv(pos);
+	tputs(str, 0, ft_putwtty);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwchar.c                                      :+:      :+:    :+:   */
+/*   ft_putwtty.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/27 09:50:20 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 09:50:55 by briviere         ###   ########.fr       */
+/*   Created: 2017/12/27 09:27:16 by briviere          #+#    #+#             */
+/*   Updated: 2017/12/27 09:53:02 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_io.h"
+#include "ft_term.h"
 
-inline int	ft_putwchar(wchar_t c)
+int		ft_putwtty(int c)
 {
-	return (ft_putwchar_fd(1, c));
+	return (ft_putwchar_fd(ft_term_tty(TTY_GET), c));
 }

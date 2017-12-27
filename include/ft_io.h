@@ -6,13 +6,14 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:44:38 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/21 15:47:06 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/27 09:27:43 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_IO_H
 # define FT_IO_H
 
+# include <fcntl.h>
 # include "ft_str.h"
 # include <limits.h>
 # include <string.h>
@@ -20,7 +21,6 @@
 # include <wchar.h>
 
 void	ft_putchar(char c);
-int		ft_fputchar(int c);
 int		ft_putwchar(wchar_t c);
 void	ft_putchar_mul(char c, size_t count);
 void	ft_putstr(const char *str);

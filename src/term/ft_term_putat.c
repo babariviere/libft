@@ -15,5 +15,5 @@
 void	ft_term_putat(char *str, t_pos pos)
 {
 	ft_term_cur_mv(pos);
-	tputs(str, 0, ft_fputchar);
+	tputs(str, 0, ft_puttty);
 }

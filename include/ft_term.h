@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/26 15:24:26 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/27 09:27:50 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 # include "ft_str.h"
 # include <term.h>
 # include <termios.h>
+
+enum	e_tty_act {
+	TTY_OPEN,
+	TTY_CLOSE,
+	TTY_GET,
+};
+
+int		ft_term_tty(enum e_tty_act act);
+int		ft_puttty(int c);
 
 char	*ft_term_init(const char *termtype, int set_all);
 char	*ft_term_type(void);

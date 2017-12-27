@@ -15,7 +15,7 @@
 void	ft_term_set_ul(int state)
 {
 	if (state)
-		tputs(ft_term_us(0), 1, ft_fputchar);
+		tputs(ft_term_us(0), 1, ft_puttty);
 	else
-		tputs(ft_term_ue(0), 1, ft_fputchar);
+		tputs(ft_term_ue(0), 1, ft_puttty);
 }

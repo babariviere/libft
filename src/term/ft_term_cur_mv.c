@@ -14,5 +14,5 @@
 
 inline void	ft_term_cur_mv(t_pos pos)
 {
-	tputs(tgoto(ft_term_cm(0), pos.x, pos.y), 1, ft_fputchar);
+	tputs(tgoto(ft_term_cm(0), pos.x, pos.y), 1, ft_puttty);
 }

@@ -14,5 +14,5 @@
 
 inline void	ft_term_clr(void)
 {
-	tputs(ft_term_cl(0), 0, ft_fputchar);
+	tputs(ft_term_cl(0), 0, ft_puttty);
 }

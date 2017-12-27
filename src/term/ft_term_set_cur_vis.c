@@ -15,7 +15,7 @@
 void	ft_term_set_cur_vis(int state)
 {
 	if (state)
-		tputs(ft_term_ve(0), 1, ft_fputchar);
+		tputs(ft_term_ve(0), 1, ft_puttty);
 	else
-		tputs(ft_term_vi(0), 1, ft_fputchar);
+		tputs(ft_term_vi(0), 1, ft_puttty);
 }

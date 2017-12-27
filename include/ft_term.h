@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:24:25 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 09:54:12 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/27 10:42:02 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ int		ft_putwtty(int c);
 
 char	*ft_term_init(const char *termtype, int set_all);
 char	*ft_term_type(void);
+
+void	ft_term_start(int cur, int hidein);
+void	ft_term_stop(void);
+
 int		ft_term_col(void);
 int		ft_term_row(void);
 void	ft_term_clr(void);

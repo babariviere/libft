@@ -38,7 +38,7 @@ TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.
 		  ft_term_mr.c ft_term_me.c ft_term_ti.c ft_term_te.c ft_term_cl.c\
 		  ft_term_set_alt_scr.c ft_term_set_ul.c ft_term_set_rv.c ft_term_putat.c\
 		  ft_term_vi.c ft_term_ve.c ft_term_set_cur_vis.c ft_term_tty.c\
-		  ft_puttty.c ft_putwtty.c ft_term_putwat.c
+		  ft_puttty.c ft_putwtty.c ft_term_putwat.c ft_term_start.c ft_term_stop.c
 SRC_NAME=$(addprefix chr/, $(CHR_NAME))\
 		 $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME))\

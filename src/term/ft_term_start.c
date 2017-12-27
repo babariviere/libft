@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 10:41:44 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 10:43:16 by briviere         ###   ########.fr       */
+/*   Updated: 2017/12/27 10:45:07 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ void	ft_term_start(int cur, int hidein)
 	if (hidein)
 		ft_term_hidein();
 	ft_term_clr();
-	if (cur)
-		ft_term_set_cur_vis(0);
+	ft_term_set_cur_vis(cur);
 }

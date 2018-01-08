@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term_row.c                                      :+:      :+:    :+:   */
+/*   ft_term_gsrow.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/19 09:20:43 by briviere          #+#    #+#             */
-/*   Updated: 2018/01/08 13:41:27 by briviere         ###   ########.fr       */
+/*   Created: 2018/01/08 13:38:59 by briviere          #+#    #+#             */
+/*   Updated: 2018/01/08 13:40:44 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_term.h"
 
-inline int	ft_term_row(void)
+int		ft_term_gsrow(enum e_term_act act, int val)
 {
-	return (ft_term_gsrow(TERM_GET, 0));
+	static int	row;
+
+	if (act == TERM_SET && val <= 0)
+		row = tgetnum("li");
+	else if (act == TERM_SET)
+		row = val;
+	return (row);
 }

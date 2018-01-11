@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 13:46:38 by briviere          #+#    #+#             */
-/*   Updated: 2018/01/11 14:34:11 by briviere         ###   ########.fr       */
+/*   Updated: 2018/01/11 14:36:50 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ static void		ft_go_up(char **res)
 	size_t	len_base;
 	size_t	len_res;
 
-	base = ft_basename(*res);
-	len_base = ft_strlen(base);
 	len_res = ft_strlen(*res);
 	if (len_res == 1)
 		return ;
+	base = ft_basename(*res);
+	len_base = ft_strlen(base);
 	tmp = ft_strndup(*res, len_res - len_base - ((*res)[len_res - 1] == '/'));
 	ft_strdel(res);
+	free(base);
 	*res = tmp;
 }
 

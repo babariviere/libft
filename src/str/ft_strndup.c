@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2018/01/11 13:47:04 by briviere         ###   ########.fr       */
+/*   Created: 2018/01/11 13:57:12 by briviere          #+#    #+#             */
+/*   Updated: 2018/01/11 14:01:21 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_str.h"
 
-# include "ft_arg.h"
-# include "ft_chr.h"
-# include "ft_dlst.h"
-# include "ft_env.h"
-# include "ft_fmt.h"
-# include "ft_fs.h"
-# include "ft_geo.h"
-# include "ft_gnl.h"
-# include "ft_lst.h"
-# include "ft_mem.h"
-# include "ft_nbr.h"
-# include "ft_io.h"
-# include "ft_str.h"
-# include "ft_term.h"
+char	*ft_strndup(const char *s, size_t size)
+{
+	char	*res;
+	size_t	idx;
 
-#endif
+	if ((res = ft_strnew(size)) == 0)
+		return (0);
+	idx = 0;
+	while (idx < size)
+	{
+		res[idx] = s[idx];
+		idx++;
+	}
+	return (res);
+}

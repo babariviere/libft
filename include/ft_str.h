@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:42:24 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 12:54:53 by briviere         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:56:34 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *s);
+char		*ft_strndup(const char *s, size_t size);
 char		*ft_strcpy(char *dst, const char *src);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
 char		*ft_strcpy_esc(char *dst, const char *src);

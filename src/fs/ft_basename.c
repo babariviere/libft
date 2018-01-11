@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_basename.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2018/01/11 13:47:04 by briviere         ###   ########.fr       */
+/*   Created: 2018/01/11 13:42:18 by briviere          #+#    #+#             */
+/*   Updated: 2018/01/11 14:03:53 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_fs.h"
 
-# include "ft_arg.h"
-# include "ft_chr.h"
-# include "ft_dlst.h"
-# include "ft_env.h"
-# include "ft_fmt.h"
-# include "ft_fs.h"
-# include "ft_geo.h"
-# include "ft_gnl.h"
-# include "ft_lst.h"
-# include "ft_mem.h"
-# include "ft_nbr.h"
-# include "ft_io.h"
-# include "ft_str.h"
-# include "ft_term.h"
+char	*ft_basename(const char *path)
+{
+	int		idx;
+	size_t	len;
 
-#endif
+	len = ft_strlen(path);
+	idx = len - 1;
+	if (len == 1)
+		return (ft_strdup(path));
+	if (path[idx] == '/')
+	{
+		len--;
+		idx--;
+	}
+	while (idx >= 0 && path[idx] != '/')
+		idx--;
+	if (idx < 0 || path[idx] != '/')
+		return (ft_strndup(path, len));
+	idx++;
+	return (ft_strndup(path + idx, len - idx));
+}

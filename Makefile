@@ -11,6 +11,7 @@ ENV_NAME=ft_env_get.c ft_env_init.c ft_env_rm.c ft_env_set.c ft_env_set_ent.c\
 		 ft_env_load.c
 FMT_NAME=ft_fmt_add_str.c ft_fmt_calibrate.c ft_fmt_calibrate_range.c ft_fmt_free.c\
 		 ft_fmt_init.c ft_fmt_print.c ft_fmts_sort.c
+FS_NAME=ft_basename.c ft_join_path.c
 GNL_NAME=ft_gnl.c
 LST_NAME=ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstfilter.c ft_lstfind.c ft_lstget.c\
 		 ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c
@@ -32,7 +33,7 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strncpy_esc.c\
 		 ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strremove.c ft_strrepl.c ft_strsort.c\
 		 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
-		 ft_strtrim.c ft_strmax.c
+		 ft_strtrim.c ft_strmax.c ft_strndup.c
 TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c\
 		  ft_term_cur_mv.c ft_term_cm.c ft_term_hidein.c ft_term_us.c ft_term_ue.c\
 		  ft_term_mb.c ft_term_md.c ft_term_mh.c ft_term_mk.c ft_term_mp.c\
@@ -46,6 +47,7 @@ SRC_NAME=$(addprefix arg/, $(ARG_NAME))\
 		 $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME))\
 		 $(addprefix fmt/, $(FMT_NAME))\
+		 $(addprefix fs/, $(FS_NAME))\
 		 $(addprefix gnl/, $(GNL_NAME))\
 		 $(addprefix io/, $(IO_NAME))\
 		 $(addprefix lst/, $(LST_NAME))\

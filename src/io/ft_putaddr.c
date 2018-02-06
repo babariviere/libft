@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/06 16:07:13 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/06 16:17:47 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/06 16:19:27 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void		ft_putaddr_rec(size_t addr, int count)
 {
 	size_t	mod;
 
-	if (count > 0)
+	if (count >= 0)
 		ft_putaddr_rec(addr / 16, count - 1);
 	mod = addr % 16;
 	if (mod >= 10)

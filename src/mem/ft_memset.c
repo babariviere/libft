@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:34:43 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/10 16:29:44 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/06 19:23:59 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	uint8_t	*ptr;
-	uint8_t	byte;
+	unsigned char	*ptr;
+	unsigned char	byte;
 
 	byte = c;
 	ptr = b;

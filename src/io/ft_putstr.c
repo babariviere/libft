@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 16:46:29 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/21 20:09:34 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/06 19:21:02 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putstr(const char *str)
 {
-	write(1, str, ft_strlen(str));
+	(void)write(1, str, ft_strlen(str));
 }

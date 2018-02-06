@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 12:21:33 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/13 10:14:48 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/06 19:23:34 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const uint8_t	*ptr;
-	uint8_t			byte;
+	const unsigned char	*ptr;
+	unsigned char		byte;
 
-	ptr = (const uint8_t *)s;
-	byte = (uint8_t)c;
+	ptr = (const unsigned char *)s;
+	byte = (unsigned char)c;
 	while (n--)
 	{
 		if (*ptr == byte)

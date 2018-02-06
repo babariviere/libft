@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:36:23 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/13 10:12:37 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/06 19:23:17 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	uint8_t			*dst_ptr;
-	const uint8_t	*src_ptr;
-	uint8_t			byte;
+	unsigned char		*dst_ptr;
+	const unsigned char	*src_ptr;
+	unsigned char		byte;
 
 	dst_ptr = dst;
 	src_ptr = src;

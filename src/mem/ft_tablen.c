@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 17:05:33 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/30 23:08:00 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/06 19:24:14 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_tablen(const void *tab, size_t elem)
 {
-	size_t			len;
-	const uint8_t	*tptr;
-	uint8_t			nul[elem];
+	size_t				len;
+	const unsigned char	*tptr;
+	unsigned char		nul[elem];
 
 	len = 0;
 	tptr = tab;

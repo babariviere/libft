@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:44:38 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/06 16:06:42 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/07 17:32:15 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	ft_putendl3_fd(const char *str1, const char *str2, const char *str3,
 		int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putaddr(void *addr);
+void	ft_putsize(size_t size);
 
 #endif

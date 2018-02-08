@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/06 16:07:13 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/06 16:22:31 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/08 21:32:01 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ static void		ft_putaddr_rec(size_t addr, int count)
 void			ft_putaddr(void *addr)
 {
 	ft_putstr("0x");
-	ft_putaddr_rec((size_t)addr, 12);
+	ft_putaddr_rec((size_t)addr, sizeof(void *) * 2);
 }

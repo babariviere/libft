@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 09:07:29 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/05 14:19:41 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:32:54 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void			ft_env_set(char ***envp_ptr, char *name, char *value)
 {
 	char		**envp;
 	size_t		idx;
-	size_t		name_len;
+	size_t		len;
 	char		*tmp;
 
 	envp = *envp_ptr;
 	idx = 0;
-	name_len = ft_strlen(name);
+	len = ft_strlen(name);
 	while (envp[idx])
 	{
-		if (ft_strncmp(envp[idx], name, name_len) == 0)
+		if (ft_strncmp(envp[idx], name, len) == 0 && envp[idx][len] == '=')
 		{
 			tmp = ft_env_set_sub(name, value);
 			free(envp[idx]);

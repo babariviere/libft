@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:20:12 by briviere          #+#    #+#             */
-/*   Updated: 2017/11/10 13:17:09 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/12 09:07:13 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap == 0 || *ap == 0)
+	if (ap == 0)
 		return ;
 	free(*ap);
 	*ap = 0;

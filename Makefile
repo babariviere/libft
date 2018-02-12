@@ -88,12 +88,12 @@ obj/%.o: src/%.c
 obj_dbg/%.o: src/%.c
 	@mkdir -p $(basename $@)
 	@printf "==> compiling %s\n" $@
-	$(CC) $(CFLAGS) -g -c $< -o $@
+	@$(CC) $(CFLAGS) -g -c $< -o $@
 
 obj_san/%.o: src/%.c
 	@mkdir -p $(basename $@)
 	@printf "==> compiling %s\n" $@
-	$(CC) $(CFLAGS) $(SANFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(SANFLAGS) -c $< -o $@
 
 norme:
 	@norminette $(SRC)

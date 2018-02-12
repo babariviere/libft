@@ -69,24 +69,30 @@ SANFLAGS=-fsanitize=address
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@printf "==> compiling %s\n" $@
+	@ar rcs $(NAME) $(OBJ)
 
 $(NAME_DBG): $(OBJ_DBG)
-	ar rcs $(NAME_DBG) $(OBJ_DBG)
+	@printf "==> compiling %s\n" $@
+	@ar rcs $(NAME_DBG) $(OBJ_DBG)
 
 $(NAME_SAN): $(OBJ_SAN)
-	ar rcs $(NAME_SAN) $(OBJ_SAN)
+	@printf "==> compiling %s\n" $@
+	@ar rcs $(NAME_SAN) $(OBJ_SAN)
 
 obj/%.o: src/%.c
 	@mkdir -p $(basename $@)
-	$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
+	@printf "==> compiling %s\n" $@
+	@$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
 
 obj_dbg/%.o: src/%.c
 	@mkdir -p $(basename $@)
+	@printf "==> compiling %s\n" $@
 	$(CC) $(CFLAGS) -g -c $< -o $@
 
 obj_san/%.o: src/%.c
 	@mkdir -p $(basename $@)
+	@printf "==> compiling %s\n" $@
 	$(CC) $(CFLAGS) $(SANFLAGS) -c $< -o $@
 
 norme:

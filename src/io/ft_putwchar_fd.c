@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 15:46:48 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/27 09:49:59 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/13 11:48:40 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_putwchar_fd(int fd, wchar_t uni)
 		return (write(fd, &res, 2));
 	}
 	res = (res << 8) | ((uni & (0b00111111 << 6)) >> 6 | 0b10000000);
-	if (uni > 0x7ff && uni <= 0x7fff)
+	if (uni > 0x7ff && uni <= 0xffff)
 	{
 		res = (res << 8) | ((uni & (0b00111111 << 12)) >> 12 | 0b11100000);
 		return (write(fd, &res, 3));

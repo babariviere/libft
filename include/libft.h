@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/16 09:20:45 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/16 11:13:43 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include "ft_arg.h"
+# include "ft_buf.h"
 # include "ft_chr.h"
 # include "ft_dlst.h"
 # include "ft_env.h"

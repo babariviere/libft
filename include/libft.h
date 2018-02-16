@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2018/01/11 13:47:04 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/16 09:20:45 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@
 # include "ft_nbr.h"
 # include "ft_io.h"
 # include "ft_str.h"
-# include "ft_term.h"
 
 #endif

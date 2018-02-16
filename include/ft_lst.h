@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:46:16 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/18 16:57:45 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/16 09:50:11 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ t_lst			*ft_lstfind(const t_lst *lst,
 		int (*f)(const void *content, const void *to_find),
 		void *to_find);
 t_lst			*ft_lstget(const t_lst *lst, size_t idx);
+
+void			ft_lstdel_def(void *content, size_t size);
 
 #endif

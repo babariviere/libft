@@ -14,7 +14,8 @@ FMT_NAME=ft_fmt_add_str.c ft_fmt_calibrate.c ft_fmt_calibrate_range.c ft_fmt_fre
 FS_NAME=ft_basename.c ft_join_path.c
 GNL_NAME=ft_gnl.c
 LST_NAME=ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstfilter.c ft_lstfind.c ft_lstget.c\
-		 ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c
+		 ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c\
+		 ft_lstdel_def.c
 MEM_NAME=ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
 		 ft_memdel.c ft_memmove.c ft_memset.c ft_realloc.c ft_swap.c\
 		 ft_swap_ptr.c ft_tabjoin.c ft_tablen.c ft_tabdel.c

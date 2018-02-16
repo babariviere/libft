@@ -2,6 +2,7 @@ NAME=libft.a
 NAME_DBG=libftdbg.a
 NAME_SAN=libftsan.a
 ARG_NAME=ft_getopt.c
+BUF_NAME=ft_bufnew.c ft_bufdel.c ft_bufputs.c ft_bufputc.c ft_bufrealloc.c
 CHR_NAME=ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c\
 		 ft_isprint.c ft_isupper.c ft_iswhitespace.c ft_tolower.c ft_toupper.c
 DLST_NAME=ft_dlstadd.c ft_dlstdel.c ft_dlstdelone.c ft_dlstfilter.c ft_dlstfind.c\
@@ -45,6 +46,7 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 #		  ft_puttty.c ft_putwtty.c ft_term_putwat.c ft_term_start.c ft_term_stop.c\
 #		  ft_term_gscol.c ft_term_gsrow.c ft_term_resize.c
 SRC_NAME=$(addprefix arg/, $(ARG_NAME))\
+		 $(addprefix buf/, $(BUF_NAME))\
 		 $(addprefix chr/, $(CHR_NAME))\
 		 $(addprefix dlst/, $(DLST_NAME))\
 		 $(addprefix env/, $(ENV_NAME))\

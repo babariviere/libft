@@ -37,14 +37,14 @@ STR_NAME=ft_strcat.c ft_strchr.c ft_strchr_esc.c ft_strclr.c ft_strcmp.c\
 		 ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strremove.c ft_strrepl.c ft_strsort.c\
 		 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtab_join.c ft_strtab_join_sep.c ft_strtab_len.c\
 		 ft_strtrim.c ft_strmax.c ft_strndup.c ft_wcharcpy.c
-#TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c\
-#		  ft_term_cur_mv.c ft_term_cm.c ft_term_hidein.c ft_term_us.c ft_term_ue.c\
-#		  ft_term_mb.c ft_term_md.c ft_term_mh.c ft_term_mk.c ft_term_mp.c\
-#		  ft_term_mr.c ft_term_me.c ft_term_ti.c ft_term_te.c ft_term_cl.c\
-#		  ft_term_set_alt_scr.c ft_term_set_ul.c ft_term_set_rv.c ft_term_putat.c\
-#		  ft_term_vi.c ft_term_ve.c ft_term_set_cur_vis.c ft_term_tty.c\
-#		  ft_puttty.c ft_putwtty.c ft_term_putwat.c ft_term_start.c ft_term_stop.c\
-#		  ft_term_gscol.c ft_term_gsrow.c ft_term_resize.c
+TERM_NAME=ft_term_init.c ft_term_type.c ft_term_col.c ft_term_row.c ft_term_clr.c\
+		  ft_term_cur_mv.c ft_term_cm.c ft_term_hidein.c ft_term_us.c ft_term_ue.c\
+		  ft_term_mb.c ft_term_md.c ft_term_mh.c ft_term_mk.c ft_term_mp.c\
+		  ft_term_mr.c ft_term_me.c ft_term_ti.c ft_term_te.c ft_term_cl.c\
+		  ft_term_set_alt_scr.c ft_term_set_ul.c ft_term_set_rv.c ft_term_putat.c\
+		  ft_term_vi.c ft_term_ve.c ft_term_set_cur_vis.c ft_term_tty.c\
+		  ft_puttty.c ft_putwtty.c ft_term_putwat.c ft_term_start.c ft_term_stop.c\
+		  ft_term_gscol.c ft_term_gsrow.c ft_term_resize.c
 SRC_NAME=$(addprefix arg/, $(ARG_NAME))\
 		 $(addprefix buf/, $(BUF_NAME))\
 		 $(addprefix chr/, $(CHR_NAME))\
@@ -57,8 +57,8 @@ SRC_NAME=$(addprefix arg/, $(ARG_NAME))\
 		 $(addprefix lst/, $(LST_NAME))\
 		 $(addprefix mem/, $(MEM_NAME))\
 		 $(addprefix nbr/, $(NBR_NAME))\
-		 $(addprefix stack/, $(STK_NAME))\
 		 $(addprefix str/, $(STR_NAME))
+#		 $(addprefix stack/, $(STK_NAME))\
 #		 $(addprefix term/, $(TERM_NAME))
 SRC=$(addprefix src/, $(SRC_NAME))
 OBJ=$(patsubst src/%.c, obj/%.o, $(SRC))

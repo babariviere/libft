@@ -21,7 +21,7 @@ MEM_NAME=ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy
 		 ft_memdel.c ft_memmove.c ft_memset.c ft_realloc.c ft_swap.c\
 		 ft_swap_ptr.c ft_tabjoin.c ft_tablen.c ft_tabdel.c
 NBR_NAME=ft_atoi.c ft_human_metric_bin.c ft_human_metric_dec.c ft_itoa.c ft_numlen.c\
-		 ft_pow.c ft_sqrt.c ft_stoa_human.c ft_ceil.c
+		 ft_pow.c ft_sqrt.c ft_stoa_human.c ft_ceil.c ft_abs.c
 IO_NAME=ft_putchar.c ft_putchar_fd.c ft_putchar_mul.c ft_putendl.c ft_putendl2.c\
 		 ft_putendl2_fd.c ft_putendl3.c ft_putendl3_fd.c ft_putendl_fd.c ft_puterr.c\
 		 ft_putnbr.c ft_putnbr_base.c ft_putnbr_bin.c ft_putnbr_fd.c ft_putnbr_hex.c\

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:40:53 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/19 15:20:23 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/20 18:20:12 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ size_t			ft_numlen(int nb);
 int				ft_sqrt(int nb);
 int				ft_pow(int nb, int pow);
 int				ft_ceil(float nb);
+int				ft_abs(int nb);
 
 #endif

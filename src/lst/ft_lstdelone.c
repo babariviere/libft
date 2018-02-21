@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:25:41 by briviere          #+#    #+#             */
-/*   Updated: 2017/12/08 17:07:44 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/21 11:11:17 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
 {
-	del((*alst)->content, (*alst)->content_size);
+	if (del)
+		del((*alst)->content, (*alst)->content_size);
 	ft_memdel((void **)alst);
 }

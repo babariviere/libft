@@ -66,7 +66,6 @@ OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
 OBJ_SAN=$(patsubst src/%.c, obj_san/%.o, $(SRC))
 CC=clang
 CFLAGS=-Wall -Wextra -Werror -Iinclude
-OPTI=-O3
 SANFLAGS=-fsanitize=address
 
 all: $(NAME)
@@ -86,7 +85,7 @@ $(NAME_SAN): $(OBJ_SAN)
 obj/%.o: src/%.c
 	@mkdir -p $(basename $@)
 	@printf "==> compiling %s\n" $@
-	@$(CC) $(CFLAGS) $(OPTI) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 obj_dbg/%.o: src/%.c
 	@mkdir -p $(basename $@)

@@ -6,12 +6,14 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 16:46:16 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/16 09:50:11 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/24 16:54:58 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LST_H
 # define FT_LST_H
+
+# define FT_LST_DEL (void (*)(void *, size_t))1
 
 # include "ft_mem.h"
 # include <string.h>

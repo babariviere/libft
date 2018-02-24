@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_htcreate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:25:41 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/24 16:54:37 by briviere         ###   ########.fr       */
+/*   Created: 2018/02/24 16:44:31 by briviere          #+#    #+#             */
+/*   Updated: 2018/02/24 16:46:10 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_hash.h"
 
-void	ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
+t_hashtable		*ft_htcreate(size_t size)
 {
-	if (del == FT_LST_DEL)
-		free((*alst)->content);
-	else if (del)
-		del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void **)alst);
+	t_hashtable		*res;
+
+	if ((res = malloc(sizeof(t_hashtable))) == 0)
+		return (0);
+	res->size = size;
+	if ((res->entries = ft_memalloc(sizeof(t_htent *) * size)) == 0)
+	{
+		free(res);
+		return (0);
+	}
+	return (res);
 }

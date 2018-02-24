@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_htset_delfn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:25:41 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/24 16:54:37 by briviere         ###   ########.fr       */
+/*   Created: 2018/02/24 17:20:46 by briviere          #+#    #+#             */
+/*   Updated: 2018/02/24 17:23:54 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_hash.h"
 
-void	ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
+void	ft_htdel_def(void *ct)
 {
-	if (del == FT_LST_DEL)
-		free((*alst)->content);
-	else if (del)
-		del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void **)alst);
+	free(ct);
+}
+
+void	ft_htset_delfn(t_hashtable *hash, void (*del)(void *))
+{
+	if (del == FT_HASH_DEL)
+		hash->del_fn = ft_htdel_def;
+	else
+		hash->del_fn = del;
 }

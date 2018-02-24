@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_hthash.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:25:41 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/24 16:54:37 by briviere         ###   ########.fr       */
+/*   Created: 2018/02/24 16:55:09 by briviere          #+#    #+#             */
+/*   Updated: 2018/02/24 16:57:40 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_hash.h"
 
-void	ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
+size_t		ft_hthash(const t_hashtable *ht, const char *key)
 {
-	if (del == FT_LST_DEL)
-		free((*alst)->content);
-	else if (del)
-		del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void **)alst);
+	size_t		res;
+
+	res = 0;
+	while (*key)
+	{
+		res <<= 8;
+		res |= *key;
+		key++;
+	}
+	return (res % ht->size);
 }

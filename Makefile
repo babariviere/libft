@@ -14,9 +14,9 @@ FMT_NAME=ft_fmt_add_str.c ft_fmt_calibrate.c ft_fmt_calibrate_range.c ft_fmt_fre
 		 ft_fmt_init.c ft_fmt_print.c ft_fmts_sort.c
 FS_NAME=ft_basename.c ft_join_path.c
 GNL_NAME=ft_gnl.c
+HASH_NAME=ft_htcreate.c ft_htdelete.c ft_hthash.c ft_htget.c ft_htset.c ft_htset_delfn.c
 LST_NAME=ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstfilter.c ft_lstfind.c ft_lstget.c\
-		 ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c\
-		 ft_lstdel_def.c
+		 ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_lstnew_mv.c ft_lstpush.c
 MEM_NAME=ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
 		 ft_memdel.c ft_memmove.c ft_memset.c ft_realloc.c ft_swap.c\
 		 ft_swap_ptr.c ft_tabjoin.c ft_tablen.c ft_tabdel.c
@@ -53,6 +53,7 @@ SRC_NAME=$(addprefix arg/, $(ARG_NAME))\
 		 $(addprefix fmt/, $(FMT_NAME))\
 		 $(addprefix fs/, $(FS_NAME))\
 		 $(addprefix gnl/, $(GNL_NAME))\
+		 $(addprefix hash/, $(HASH_NAME))\
 		 $(addprefix io/, $(IO_NAME))\
 		 $(addprefix lst/, $(LST_NAME))\
 		 $(addprefix mem/, $(MEM_NAME))\
@@ -66,6 +67,7 @@ OBJ_DBG=$(patsubst src/%.c, obj_dbg/%.o, $(SRC))
 OBJ_SAN=$(patsubst src/%.c, obj_san/%.o, $(SRC))
 CC=clang
 CFLAGS=-Wall -Wextra -Werror -Iinclude
+CFLAGS_DBG=$(CFLAGS) -g3
 SANFLAGS=-fsanitize=address
 
 all: $(NAME)
@@ -90,7 +92,7 @@ obj/%.o: src/%.c
 obj_dbg/%.o: src/%.c
 	@mkdir -p $(basename $@)
 	@printf "==> compiling %s\n" $@
-	@$(CC) $(CFLAGS) -g -c $< -o $@
+	@$(CC) $(CFLAGS_DBG) -c $< -o $@
 
 obj_san/%.o: src/%.c
 	@mkdir -p $(basename $@)

@@ -6,7 +6,7 @@
 /*   By: briviere <briviere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:51:56 by briviere          #+#    #+#             */
-/*   Updated: 2018/02/16 11:13:43 by briviere         ###   ########.fr       */
+/*   Updated: 2018/02/24 17:07:44 by briviere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "ft_fs.h"
 # include "ft_geo.h"
 # include "ft_gnl.h"
+# include "ft_hash.h"
 # include "ft_lst.h"
 # include "ft_mem.h"
 # include "ft_nbr.h"

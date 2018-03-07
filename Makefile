@@ -85,17 +85,17 @@ $(NAME_SAN): $(OBJ_SAN)
 	@ar rcs $(NAME_SAN) $(OBJ_SAN)
 
 obj/%.o: src/%.c
-	@mkdir -p $(basename $@)
+	@mkdir -p $(shell dirname $@)
 	@printf "==> compiling %s\n" $@
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 obj_dbg/%.o: src/%.c
-	@mkdir -p $(basename $@)
+	@mkdir -p $(shell dirname $@)
 	@printf "==> compiling %s\n" $@
 	@$(CC) $(CFLAGS_DBG) -c $< -o $@
 
 obj_san/%.o: src/%.c
-	@mkdir -p $(basename $@)
+	@mkdir -p $(shell dirname $@)
 	@printf "==> compiling %s\n" $@
 	@$(CC) $(CFLAGS) $(SANFLAGS) -c $< -o $@
 
